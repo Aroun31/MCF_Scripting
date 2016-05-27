@@ -1,0 +1,5 @@
+/*
+Aroun MCF
+init.sqf
+*/
+

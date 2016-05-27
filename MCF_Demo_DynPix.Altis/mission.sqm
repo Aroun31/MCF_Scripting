@@ -1,0 +1,103 @@
+version=52;
+class EditorData
+{
+	moveGridStep=1;
+	angleGridStep=0.2617994;
+	scaleGridStep=1;
+	autoGroupingDist=10;
+	toggles=1;
+	class ItemIDProvider
+	{
+		nextID=3;
+	};
+	class Camera
+	{
+		pos[]={21571.789,26.367382,21286.146};
+		dir[]={0.80774504,-0.27293214,0.52263767};
+		up[]={0.2291588,0.96203405,0.14827362};
+		aside[]={0.54326397,-2.8219074e-007,-0.8396191};
+	};
+};
+binarizationWanted=0;
+addons[]=
+{
+	"A3_Characters_F_Civil",
+	"a3_characters_f",
+	"A3_Structures_F_Civ_InfoBoards"
+};
+randomSeed=7646011;
+class ScenarioData
+{
+	author="Aroun MCF";
+};
+class Mission
+{
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.30000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.30000001;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2035;
+		month=6;
+		day=24;
+		hour=12;
+		minute=0;
+		startFogDecay=0.013;
+		forecastFogDecay=0.013;
+	};
+	class Entities
+	{
+		items=2;
+		class Item0
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={21583.762,19.328136,21291.662};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						isPlayer=1;
+					};
+					id=1;
+					type="C_man_1";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=0;
+		};
+		class Item1
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={21584.502,21.050438,21297.307};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+				init="MCF = this execVM ""scripts\AnimPub.sqf"";";
+			};
+			id=2;
+			type="Land_Billboard_F";
+			atlOffset=-1.9073486e-006;
+		};
+	};
+};
