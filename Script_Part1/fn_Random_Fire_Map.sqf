@@ -9,6 +9,8 @@
 *		pour initialiser le script en init :
 *		_da3f = 0 spawn DA3F_fnc_Random_Fire_Map;
 *		Pensez à le déclarer dans le function.h (.hpp selon les versions toute façon change rien du tout)
+*		Si tu souhaite me soutenir de cette manière :
+*		https://www.paypal.me/LeBriCodeur
 *
 */
 if !(isServer) exitWith {}; // dégage de la client !!!
