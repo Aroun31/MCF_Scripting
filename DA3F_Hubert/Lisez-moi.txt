@@ -1,0 +1,49 @@
+function.h/.hpp :
+
+class MCF_Master
+{
+	tag = "DA3F";
+	class MCF_Hubert
+	{
+	file = "DA3F\DA3F_Hubert";
+		class hubert_Open {};
+		class hubert_Mrk {};
+		class hubert_MoveMap {};
+		class hubert_Valide {};
+		class hubert_Call_drivers {};
+		class hubert_Sarl {};
+		class hubert_Panel {};
+		class hubert_accept {};
+		class hubert_switch {};
+		class hubert_annul {};
+		class hubert_facture {};
+		class hubert_CashInMyPocket {};
+	};
+};
+
+/////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
+
+Action à mettre en place (Addaction pour les tests tu les mets ou tu veux même dans ton .... oups je dérive encore...)
+
+// appeler le script avec un bouton dans un menu avec : call DA3F_fnc_hubert_Open;
+player addAction ["<t color='#00F700' size='1.2' >Call Hubert Service<t/>",DA3F_fnc_hubert_Open,"",900,false,false,"",""];
+
+player addAction ["<t color='#00F700' size='1.2' >Call Hubert Service Panel<t/>",DA3F_fnc_hubert_Panel,"",900,false,false,"","!(player isEqualTo (vehicle player)) && !(isNil{player getVariable 'DA3F_Hubert_Taf'})"];
+player addAction ["<t color='#00F700' size='1.2' >Call Hubert Service Facture<t/>",DA3F_fnc_hubert_Facture,"",900,false,false,"","!(isNil{player getVariable 'DA3F_Hubert_Taf'})"];
+/*
+// Objet map
+this addAction ["<t color='#00F700' size='1.2' >Call Hubert Service Panel<t/>",DA3F_fnc_hubert_Panel,"",900,false,false,"",""];
+*/
+
+/////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
+
+A mettre dans le CfgRemoteExec.hpp
+        F(DA3F_fnc_hubert_Call_drivers,CLIENT)
+
+
+/////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
+
+Exécute le Dialog et je crois que c'est tout :p ^^
