@@ -1,11 +1,11 @@
 function.h/.hpp :
-
+(AltisLife mettre tout en bas du ficher)
 class MCF_Master
 {
 	tag = "DA3F";
 	class MCF_Hubert
 	{
-	file = "DA3F\DA3F_Hubert";
+	file = "DA3F\DA3F_Hubert"; // Attention au chemin utilisé !!!
 		class hubert_Open {};
 		class hubert_Mrk {};
 		class hubert_MoveMap {};
