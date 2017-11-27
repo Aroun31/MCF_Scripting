@@ -46,3 +46,17 @@ _client = _infos select 0;
 		call DA3F_fnc_hubert_switch;
 		[3,_client] remoteExecCall ["DA3F_fnc_hubert_Call_drivers",_Hubert_driver];
 		[2,player] remoteExecCall ["DA3F_fnc_hubert_Call_drivers",_client];
+		[_client]spawn {
+		_mrk_Destination = createMarkerLocal [format["%1",getPos (_this select 0)],getPos (_this select 0)];
+		_mrk_Destination setMarkerShapeLocal "ICON";
+		_mrk_Destination setMarkerTypeLocal "hd_dot";
+		_mrk_Destination setMarkerColorLocal "colorGreen";
+		_mrk_Destination setMarkerTextLocal "Client Hubert";
+			waitUntil
+			{
+				_mrk_Destination setMarkerPos getPos (_this select 0);
+				(player distance getMarkerPos _mrk_Destination)< 5
+			};
+			hint "Suppression du marker de votre client";
+			deleteMarkerLocal _mrk_Destination;
+		};
