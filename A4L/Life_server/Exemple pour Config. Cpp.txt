@@ -1,0 +1,9 @@
+    class TON_System {
+        tag = "TON";
+    	// Ajoutez ça !
+        class config
+        {
+            file = "\life_server\Functions\CopInter";
+            class SPlak_request {};
+        };
+    };

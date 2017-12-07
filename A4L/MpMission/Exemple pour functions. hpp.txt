@@ -1,0 +1,16 @@
+// mettre dans le functions.hpp (Tout en haut ou tout en bas)
+class DA3F_Master
+{
+    tag = "A4L";
+    class DA3F_SearchPlak
+    {
+    file = "DA3F\DA3F_Cops"; // Attention à bien renseigner le bon chemin !
+        class SPlak_init {};
+        class SPlak_valide {};
+        class SPlak_infos {};
+        class SPlak_String {};
+    };
+};
+
+// Ajouter ceci dans configuration.sqf ou en initPlayerLocal.sqf 
+DA3F_WaitInfo = false;
