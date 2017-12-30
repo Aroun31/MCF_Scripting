@@ -1,0 +1,25 @@
+dev = "[DA3F] Aroun Le BriCodeur";
+author = "[DA3F] Aroun Le BriCodeur";
+onLoadName = "Shop Custom"; // PackScripts LoL ^_^ 2 scripts se battent en duel ^^
+onLoadMission = "For community FR by Dev'Arma 3 France";
+joinUnassigned = 1;
+respawn = BASE;
+respawndelay = 5;
+disabledAI = true;
+disableChannels[]={0,1,2};
+enableDebugConsole = 1;
+respawnDialog = 0;
+class Header
+{
+	gameType = COOP;
+	minPlayers = 1;
+	maxPlayers = 20;
+};
+
+#include "DA3F\DA3F_Gui\DA3F_Gui_Master.hpp"
+#include "DA3F\Config.hpp"
+
+class CfgFunctions
+{
+	#include "DA3F\DA3F_Functions.h"
+};
