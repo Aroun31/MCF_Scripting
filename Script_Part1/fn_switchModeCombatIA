@@ -1,0 +1,28 @@
+/*
+[DA3F]Aroun Le BriCodeur; 
+Passe les unités du groupe en mode combat; 
+Mettre le code suivant dans l'init du leader;
+Code fait en dépannage pour un joueur de mission éditeur.
+*/ 
+_DA3F = this spawn { 
+comment "[DA3F]Aroun Le BriCodeur"; 
+comment "Passe les unités du groupe en mode combat"; 
+ 
+private ["_unit","_grp","_combatMode"]; 
+_unit  = _this; 
+_grp = group _unit; 
+ { 
+  _x addEventHandler ["FiredNear",{ 
+   _this spawn { 
+   _combatMode = combatMode (_this select 0); 
+   (_this select 0) setBehaviour selectRandom["COMBAT","STEALTH"]; 
+   hintSilent "Mode combat actif !"; 
+   (_this select 0) setCombatMode "RED"; 
+   sleep 5; comment "<-- Ici tu mets le temps en seconde avant que le groupe retouve son calme."; 
+   (_this select 0) setBehaviour "SAFE"; 
+   (_this select 0) setCombatMode _combatMode; 
+   hintSilent "Le groupe repasse en formation"; 
+   }; 
+  }]; 
+ } forEach (units _grp); 
+};
