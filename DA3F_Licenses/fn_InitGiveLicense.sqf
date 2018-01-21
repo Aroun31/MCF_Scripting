@@ -30,7 +30,7 @@ private _all_Permis = ["driver","pilot","boat","trucking"];
 	_namelic 	= getText(_x >> "displayName");
 	_var 		= getText(_x >> "variable");
 	if (_class in _all_Permis) then {
-		_add = lbAdd [1500,_namelic];
-		lbSetData [1500,(lbSize 1500)-1,str([_var,_namelic])];
+		_add = lbAdd [1500,localize _namelic];
+		lbSetData [1500,(lbSize 1500)-1,str([_var,(localize _namelic)])];
 	};
 } forEach ("true" configClasses (missionConfigFile >> "Licenses"));
