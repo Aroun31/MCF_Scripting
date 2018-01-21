@@ -1,0 +1,20 @@
+Mettre le fichier du dossier "dialog" dans votre dossier "dialog"
+le déclacrer en masterhandler.hpp
+poser le dossier "DA3F_Licenses" ou vous voulez tant que vous respectez le chemin de déclaration du function.hpp.
+déclarez tout les 'fn_' .SQF dans functions.hpp :
+    class DA3F_depanServ
+    {
+        file="DA3F\DA3F_Licenses"; // Attention au chemin utilisé
+        class InitGiveLicense {};
+        class SwitchGiveLicense {};
+        class ValideActLicense {};
+    }; 
+    
+    
+        déclarez ceci en CfgRemoteExec.hpp :
+          F(life_fnc_ValideActLicense,CLIENT)
+          
+ pour appeler le menu de façon simple :
+    player addAction ["Run License",life_fnc_InitGiveLicense];
+le fichier 'life_fnc_InitGiveLicense' est celui qui lance le menu,
+peu importe la manière de l'exécuter il lancera le menu
