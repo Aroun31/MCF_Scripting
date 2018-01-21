@@ -7,6 +7,7 @@
 *
 */
 disableSerialization;
+if ! (license_civ_autoecole) exitWith {};
 if !(createDialog "DA3F_GiveLicense") exitWith {};
 _display = (findDisplay 210118);
 _txt = _display displayCtrl 1100;
