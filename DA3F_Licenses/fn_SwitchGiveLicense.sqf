@@ -14,6 +14,8 @@ _dataUnit	= lbData[2100,_indexUnit];
 _dataLic	= call compile format ["%1", lbData[1500,_indexLic]];
 _license	= format ["license_civ_%1",_dataLic select 0];
 _unit		= call compile format ["%1", _dataUnit];
+if (_indexUnit isEqualTo -1) exitWith {hint "Sélectionne une unité"};
+if (_indexLic isEqualTo -1) exitWith {hint "Sélectionne un permis"};
 switch (_idc) do {
     case 2400: {
     	hint format ["Vous venez de retirer :\n%1\nà\n%2", _dataLic select 1,name _unit];
