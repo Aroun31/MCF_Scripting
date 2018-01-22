@@ -4,7 +4,7 @@ poser le dossier "DA3F_Licenses" ou vous voulez tant que vous respectez le chemi
 déclarez tout les 'fn_' .SQF dans functions.hpp :
     class DA3F_depanServ
     {
-        file="DA3F\DA3F_Licenses"; // Attention au chemin utilisé
+        file="DA3F\DA3F_License"; // Attention au chemin utilisé
         class InitGiveLicense {};
         class SwitchGiveLicense {};
         class ValideActLicense {};
