@@ -1,0 +1,106 @@
+author = "Auteur mission";
+Dev = "[DA3F] Aroun Le BriCodeur (MCF GaminG)"; // (n'est pas visible) inscript en mission.sqm
+onLoadName = "Titre mission";
+loadScreen = "";  // Tu peux changer image de chargement perso je la vire pour éviter l'erreur de chargement qu'Arma traîne depuis des années en soit pas très grave moi ça m'gave ^^
+// Tu peux changer (Text sous l'image PAS DE ROMAN )
+onLoadMission = "<t size='.85' align = 'center' color='#1DAEED'>Description (Courte) de la mission</t><br/><t size='1' align = 'left' color='#FEFEFE'>H.T.M.L</t><t size='1' align = 'right' color='#00FF00'>SUPPORTÉ</t>";
+// Tu ne touche pas sauf si tu sais ce que tu fais !
+joinUnassigned = 1;
+respawn = BASE;
+respawndelay = 0; // Temps de respawn
+disabledAI = 1; // n'influt pas sur l'ennemi juste les slots jouable
+disableChannels[]={{0,false,false},{1,false,false},{2,false,false},{6,false,false}};
+enableDebugConsole = 1;
+/*
+                    !!! ATTENTION !!!
+    Si vous touchez aux valeurs suivante sachez ce que vous faites ou effectuer plusieurs test !!!
+*/
+respawnDialog = 1;
+ReviveMode = 1;                         //0: disabled, 1: enabled, 2: controlled by player attributes
+ReviveUnconsciousStateMode = 1;         //0: basic, 1: advanced, 2: realistic
+ReviveRequiredTrait = 0;                //0: none, 1: medic trait is required
+ReviveRequiredItems = 0;                //0: none, 1: medkit, 2: medkit or first aid kit
+ReviveRequiredItemsFakConsumed = 0;     //0: first aid kit is not consumed upon revive, 1: first aid kit is consumed
+ReviveMedicSpeedMultiplier = 2;         //speed multiplier for revive performed by medic
+ReviveForceRespawnDelay = 0;            //time needed to perform force respawn (in secs)
+/*
+Temps en seconde pour l'incapacité (il arrive que l'action disparaisse mais elle reste active (Appuyer ESPACE) Ce n'est pas de mon ressort... Allô Bohémia, oui ton respawn bug par moment)
+300 = 5 min.
+*/
+ReviveBleedOutDelay = 300;
+
+/*
+le class Header
+C'est vous qui voyez le nombre de slots (maxPlayers) en fonction de votre serveur..
+La mission peut être joué avec plus de joueurs pensez juste à ajouter les slots sur la map.
+Pour se faire, Copier/Coller les unités jouable présente pour conserver le nom de la variable qui auto incrémente
+*/
+class Header
+{
+	gameType = COOP;
+	minPlayers = 1;
+	maxPlayers = 10;
+};
+
+// En cas de config
+// #include "dialog\DA3F_Gui_Master.hpp"
+
+// En cas de GUI title
+class RscTitles {
+//	#include "dialog\DA3F_All_titles.hpp"
+};
+
+class CfgFunctions {
+	#include "scripts\DA3F_Functions.h"
+};
+
+
+class CfgSounds {
+    sounds[] = {MySound,stop};
+    class stop {
+        name = "stop";
+        sound[] = {"", 1.0, 1};
+        titles[] = {0,""};
+    };
+
+    class MySound {
+        name = "MySound";
+    //    sound[] = {"\sound\MySound.ogg", 1.0, 1};
+        titles[] = {0,""};
+    };
+};
+
+
+class CfgDebriefing {
+    class BackLobby {
+        title = "Retour Lobby";
+        subtitle = "Merci de ta visite";
+        description = "Mission Template retour au lobby";
+        pictureBackground = "";
+        picture = "";
+        pictureColor[] = {0.8,0.25,0,1};
+    };
+    class Kick {
+        title = "Kick";
+        subtitle = "Mauvais comportement";
+        description = "Tu as été kick par un membre du staff<br/>Merci de te rendre sur Teamspeak.";
+        pictureBackground = "";
+        picture = "";
+        pictureColor[] = {0.8,0.25,0,1};
+    };
+};
+
+
+//     ["DA3F_Info_cprp_2",["%1","%2"]] call BIS_fnc_showNotification;
+class CfgNotifications
+{
+    class DA3F_Info_cprp_2
+    {
+        title = "%1";
+        iconPicture = "\A3\ui_f\data\map\mapcontrol\taskIcon_ca.paa";
+        description = "%2";
+        duration = 9;
+        priority = 7;
+    };
+
+};
