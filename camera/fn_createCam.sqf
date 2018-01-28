@@ -9,6 +9,9 @@
 *		Argument :
 *
 *			0 : objet
+*			1 : Position de la caméra
+*			2 : Position de ce que regarde la caméra
+*				_da3f = [this,[15761.6,10658.5,4],[15757,10654.3,0.2]]spawn DA3F_fnc_createCam;
 *
 */
 
