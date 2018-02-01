@@ -1,4 +1,11 @@
-
+/*
+*
+*       Dev'Arma 3 France
+*       Community FR
+*       [DA3F] Aroun Le BriCodeur
+*       RemplaceObject.sqf
+*       Remplace un objet
+*/
 // V2
 _fnc_Bag_by_DA3F={
 params[
