@@ -60,7 +60,7 @@
 
 		_verifGlas = [_obj]call _isGlasses;
 		if (_verifGlas) then {
-			player addGoggles _x;
+			player addGoggles _obj;
 		};
 		_isMagazine = {
 		  private ["_item","_return"];
