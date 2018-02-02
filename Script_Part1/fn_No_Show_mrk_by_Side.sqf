@@ -2,7 +2,6 @@
 *
 *       Dev'Arma 3 France
 *       [DA3F] Aroun Le BriCodeur
-*       By DA3F FR Community for texno225
 *       fn_No_Show_mrk_by_Side.sqf
 *		me soutenir / to support me
 *		https://www.paypal.me/LeBriCodeur
