@@ -18,7 +18,6 @@ DA3F_player_isAffect = false;
         ) then
         [{
             playerNearGas           = true;
-            DA3F_player_isAffect    = true;
         },{
             playerNearGas           = false;
             DA3F_player_isAffect    = false;
@@ -45,7 +44,7 @@ private _volume         = soundVolume;
         waituntil {playerNearGas}; // Wait till a Gas Grenade is near player
 
         if !((goggles player) in _list_Goggles) then [{
-
+            DA3F_player_isAffect    = true;
                 titleText ["GAZ! GAZ! GAZ!", "WHITE IN"];
                  "dynamicBlur" ppEffectEnable true; // enables ppeffect
                  "dynamicBlur" ppEffectAdjust [20]; // intensity of blur
