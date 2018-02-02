@@ -22,9 +22,9 @@ DA3F_player_isAffect = false;
             playerNearGas           = false;
             DA3F_player_isAffect    = false;
                 player forceWalk false;     // redonne la possibilité de courir
-                (findDisplay 46) displaySetEventHandler ["KeyDown","if ((_this select 1) isEqualTo 1) then {false}"];
+                //(findDisplay 46) displaySetEventHandler ["KeyDown","if ((_this select 1) isEqualTo 1) then {false}"];
+                (findDisplay 46) displayAddEventHandler ["KeyDown", "_this call life_fnc_keyHandler"];
         }];
-
     uiSleep 3;
     };
 };
@@ -44,6 +44,7 @@ private _volume         = soundVolume;
         waituntil {playerNearGas}; // Wait till a Gas Grenade is near player
 
         if !((goggles player) in _list_Goggles) then [{
+
             DA3F_player_isAffect    = true;
                 titleText ["GAZ! GAZ! GAZ!", "WHITE IN"];
                  "dynamicBlur" ppEffectEnable true; // enables ppeffect
@@ -66,7 +67,8 @@ private _volume         = soundVolume;
                  addCamShake [(2 + ceil random 5), 10, 5]; // sets shakevalues
                  DA3F_player_isAffect = false;
                  sleep (5 + random 2);
-                 (findDisplay 46) displaySetEventHandler ["KeyDown","if ((_this select 1) isEqualTo 1) then {false}"];
+                // (findDisplay 46) displaySetEventHandler ["KeyDown","if ((_this select 1) isEqualTo 1) then {false}"];
+                 (findDisplay 46) displayAddEventHandler ["KeyDown", "_this call life_fnc_keyHandler"];
                  player forceWalk false; // redonne la possibilité de courir
                   enableCamShake false;
             };
