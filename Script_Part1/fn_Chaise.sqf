@@ -64,4 +64,4 @@ MCF_act_up = player addAction ["<t color='#F70000' size='1.2' >Lever son cul<t/>
     	player switchMove "STOP";
     	player removeAction MCF_act_up;
     	MCF_act_up = nil;
-	},"",900,false,false,"","((animationState player) isEqualTo 'HubSittingChairUA_idle1')"];
+	},"",900,false,false,"",""];
