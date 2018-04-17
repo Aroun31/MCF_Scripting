@@ -33,10 +33,7 @@ _target = player;
 _dL = _d + 5;
 while {_this Distance _target <_dL} do {
 	waitUntil {_this Distance _target <_d};
-			_r =
-				[
-				call _i
-				] call bis_fnc_selectRandom;
-					_this setObjectTexture [0,_r];
+		_r = call _i;
+		_this setObjectTexture [0,_r];
 	sleep _t;
 	 };
