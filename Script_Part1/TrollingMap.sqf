@@ -1,7 +1,7 @@
     /*
     *
     *       Project :  
-    *               Projet Alice 
+    *               Script lol
     *
     *       Team   :
     *               Dev'Arma 3 France / http://devarma3france.fr/
