@@ -26,14 +26,22 @@ _i ={selectRandom
 /***********************************************************************/
 /*****************************NON EDITABLE******************************/
 /**********************************************************************/
-_t = _NlT + ceil (random _TR);
-_this allowDamage false;
-_this enableSimulation false;
-_target = player;
-_dL = _d + 5;
-while {_this Distance _target <_dL} do {
-	waitUntil {_this Distance _target <_d};
-		_r = call _i;
-		_this setObjectTexture [0,_r];
-	sleep _t;
-	 };
+private _t = 0;
+
+	if !(_TR isEqualTo -1) then [{
+		_t = _NlT + ceil (random _TR);
+	},{
+		_t = _NlT;
+	}];
+	
+		_this allowDamage false;
+		_this enableSimulation false;
+		_target = player;
+		_dL = _d + 5;
+		
+	while {_this Distance _target <_dL} do {
+		waitUntil {_this Distance _target <_d};
+			_r = call _i;
+			_this setObjectTexture [0,_r];
+		sleep _t;
+		 };
