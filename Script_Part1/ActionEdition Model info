@@ -1,0 +1,45 @@
+
+player addAction ["<t color='#408DA4' >Info target<t/>",{
+    private _DA3F_Target = cursorObject;
+    if (isNull _DA3F_Target) exitWith {
+        hint "Ciblez l'objet correctement";
+    };
+    private _DA3F_InfoTarget = getModelInfo _DA3F_Target;
+    private _DA3F_Classname = typeOf _DA3F_Target;
+
+    if (isNil "_DA3F_Classname" || _DA3F_Classname isEqualTo "") then {
+        _DA3F_Classname = "Inconnu";
+    };
+
+    if (isNil "_DA3F_InfoTarget" || _DA3F_InfoTarget isEqualTo "") then [{
+        _DA3F_InfoTarget = "Inconnu";
+    },{
+    DA3F_Path = (_DA3F_InfoTarget select 1);
+}];
+    hint format ["Info model : \n%1\n\n\nClassName\n%2", _DA3F_InfoTarget,_DA3F_Classname];
+
+}];
+
+player addAction ["<t color='#03E800' >Copier les infos<t/>",{
+    private _DA3F_InfoTarget = getModelInfo cursorObject;
+    private _DA3F_Classname = typeOf cursorObject;
+    if (isNil "_DA3F_InfoTarget") then {
+        _DA3F_InfoTarget = "Inconnu";
+    };
+    if (isNil "_DA3F_Classname") then {
+        _DA3F_InfoTarget = "Inconnu";
+    };
+    hint format ["Information dans le presse papier !\n\nEffectuez un CTRL+V dans un fichier pour obtenir vos infos", _DA3F_InfoTarget,_DA3F_Classname];
+    copyToClipboard str ["Info :",_DA3F_InfoTarget,"  className :",_DA3F_Classname];
+}];
+
+player addAction ["<t color='#E86900' >Créer l'objet copier<t/>",{
+if (isNil "DA3F_Path") exitWith {hint "Path objet inconnu"};
+    private _pos = player modelToWorld [5,15,0];
+    //private _pos = [((getPos player)select 0)+ 5,((getPos player)select 1)- 15,0];
+    private _obj = createSimpleObject [DA3F_Path, _pos];
+        _obj setPosATL _pos;
+        private _markerstr = createMarker [format ["DA3F_%1", getPos _obj],getPos _obj];
+                _markerstr setMarkerShape "ICON";
+                _markerstr setMarkerType "hd_dot";
+}];
