@@ -26,8 +26,8 @@ Class d'un RscControlsGroup :
 				{
 					idc = 1100;
 					text = "";
-					x = 0.325812 * safezoneW + safezoneX;
-					y = 0.276 * safezoneH + safezoneY;
+					x = 0;
+					y = 0;
 					w = 0.101562 * safezoneW;
 					h = 0.168 * safezoneH;
 					colorText[] = {0,0,0,1};
