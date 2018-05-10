@@ -1,0 +1,118 @@
+Voici juste un court exemple de class pour la création de menu/GUI
+!! ATTENTION L'exemple prend en compte que le define des controls est fait !!
+Toute cette partie est le côté .sqf qui va avec la partie .hpp
+
+// Ceci est une fonction créé pour l'exemple permettant de récupérer IDD et IDC
+Jack_fnc_hello={
+/*
+ args select 0. est le control qui appel le script si '_this' est utilisé.
+ en cas de list tel que 'RscListBox' ou 'RscCombo'
+ args select 1 sera l'index, (le choix cliqué dans la liste le 1er sera le select 0. si -1 aucun élément est sélectionné)
+params[
+    ["_Control",controlNull,[controlNull]],
+    ["_index",-1,[0]]
+    ];
+
+*/
+params[["_Control",controlNull,[controlNull]]];
+
+    hint "Coucou jack";
+    // Retourne le display du menu au quel appartient le control (idd= 123; alors retournera -> #Display 123)
+    _display = (ctrlParent _Control);
+
+    // Retourne le nuréro du display (idd= 123; alors retournera -> 123)
+    _ID_Display = ctrlIDD(_display);
+
+    // Retourne le nuréro du control (idc= 456; alors retournera -> 456)
+    _ID_Display = ctrlIDC(_Control);
+
+    // Verif en chat
+    systemChat str ["Display : ",_ID_Display," Control : ",_ID_Display];
+};
+
+// action permettant l'ouverture du menu
+    player addAction ["Open",{
+    if !(createDialog "Menu_Tuto_Jack")exitwith{}; // Nom de la class header du fichier .hpp ayant le GUI
+        disableSerialization;
+        private _display    = (findDisplay 1005183); // attribution du display
+        private _Control    = _display displayCtrl 2400; // attribution d'un control
+
+        // Exemple de retour du texte du control
+        systemChat format ["%1", ctrltext _Control];
+    }];
+
+/
+***************************************
+////////////GUI de l'exemple///////////
+****************************************
+/
+
+#define	TextSalut	"Salut !"
+    	
+class Menu_Tuto_Jack
+{
+	idd 	= 1005183;
+	name 	= "Menu_Tuto_Jack";
+	author 	= "@roun Le BriCodeur";
+	enablesimulation = 1;
+	class controlsBackground
+	{
+		class DA3F_BackG: DA3F_BackG
+		{
+			idc=1124;
+			x = 0.31625 * safezoneW + safezoneX;
+			y = 0.234 * safezoneH + safezoneY;
+			w = 0.375417 * safezoneW;
+			h = 0.447185 * safezoneH;
+			colorBackground[] = {-1,-1,-1,0.5};
+		};
+
+		class txt: DA3F_StructuredText
+		{
+			idc = 1100;
+			text = "blabla"; //--- ToDo: Localize;
+			x = 0.31625 * safezoneW + safezoneX;
+			y = 0.234 * safezoneH + safezoneY;
+			w = 0.374063 * safezoneW;
+			h = 0.07 * safezoneH;
+		};
+	};
+
+	class controls
+	{
+		class DA3F_BtnJack: DA3F_Btn
+		{
+			idc = 2400;
+			text = TextSalut;
+			x = 0.414687 * safezoneW + safezoneX;
+			y = 0.528 * safezoneH + safezoneY;
+			w = 0.190312 * safezoneW;
+			h = 0.056 * safezoneH;
+			//onbuttonclick="hint 'Coucou jack'";
+			onbuttonclick ="_this call Jack_fnc_hello";
+		};
+	};
+};
+
+
+
+
+/*
+class NameMenu // ceci est ce qui sert appeler par la commande 'createDialog' | if !(createDialog "NameMenu")exitwith{}
+{
+	idd 	= 515154; // findDisplay 515154 | _display = (findDisplay 515154)
+	name	= "NameMenu";
+	author 	= "@roun";
+
+	class controlsBackground
+	{
+		
+	};
+
+	class controls
+	{
+
+	};
+	
+};
+*/
