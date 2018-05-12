@@ -1,0 +1,145 @@
+version=52;
+class EditorData
+{
+	moveGridStep=1;
+	angleGridStep=0.2617994;
+	scaleGridStep=1;
+	autoGroupingDist=10;
+	toggles=1;
+	class ItemIDProvider
+	{
+		nextID=4;
+	};
+	class MarkerIDProvider
+	{
+		nextID=1;
+	};
+	class Camera
+	{
+		pos[]={14648.822,42.91,16723.721};
+		dir[]={-0.023723388,-0.4264195,0.90421653};
+		up[]={-0.01118389,0.90452433,0.42627338};
+		aside[]={0.99965698,-1.8026185e-009,0.026227416};
+	};
+};
+binarizationWanted=0;
+addons[]=
+{
+	"A3_Structures_F_Civ_InfoBoards",
+	"A3_Ui_F",
+	"A3_Characters_F"
+};
+class AddonsMetaData
+{
+	class List
+	{
+		items=3;
+		class Item0
+		{
+			className="A3_Structures_F";
+			name="Arma 3 Alpha - Buildings and structures";
+			author="Bohemia Interactive";
+			url="http://www.arma3.com";
+		};
+		class Item1
+		{
+			className="A3_Ui_F";
+			name="Arma 3 - User Interface";
+			author="Bohemia Interactive";
+			url="http://www.arma3.com";
+		};
+		class Item2
+		{
+			className="A3_Characters_F";
+			name="Arma 3 Alpha - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="http://www.arma3.com";
+		};
+	};
+};
+randomSeed=12660286;
+class ScenarioData
+{
+	author="Aroun MCF";
+};
+class Mission
+{
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.30000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.30000001;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2035;
+		month=6;
+		day=24;
+		hour=12;
+		minute=0;
+		startFogDecay=0.014;
+		forecastFogDecay=0.014;
+	};
+	class Entities
+	{
+		items=3;
+		class Item0
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={14621.92,18.490257,16774.975};
+				angles[]={0,5.4601755,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="pan_SpawnVeh";
+			};
+			id=0;
+			type="Land_InfoStand_V2_F";
+		};
+		class Item1
+		{
+			dataType="Marker";
+			position[]={14646.125,17.91,16757.162};
+			name="MCF_Spawn_veh";
+			text="MCF Spawn vehicule";
+			type="mil_join";
+			angle=131.02299;
+			id=1;
+		};
+		class Item2
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={14626.133,17.911438,16765.047};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						isPlayer=1;
+					};
+					id=3;
+					type="B_Soldier_F";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=2;
+		};
+	};
+};
