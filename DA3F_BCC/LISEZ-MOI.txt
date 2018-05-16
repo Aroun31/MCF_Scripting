@@ -1,0 +1,28 @@
+Autorisation à l'utilisation du pack et installe.
+
+Pack scripts 'BCC'. 
+Tous droits réservés "[DA3F] Aroun Le BriCodeur".
+
+Je me réserve le droit de réutiliser le contenu dans les missions #DA3F.
+"Alexis PtiBrack" est autorisé à l'utilisation du pack.
+Si un serveur n'est plus en accord avec "Alexis PtiBrack", Le serveur est prié de retirer le travail,
+sans quoi il sera considérer hors conditions d'utilisation et par conséquent considéré comme volé ! 
+Et dans ce cas Aroun PAS CONTENT :D !
+
+*********************  INSTALLE  *********************
+
+	mettre dans le desciption.ext :
+		
+		#include "client\DA3F_BCC\DA3F_Gui_BCC.hpp"
+
+
+	dans CfgFunctions du description.ext :
+
+		#include "client\DA3F_BCC\functions_BCC.hpp"
+
+mettre l'action sur objet ou pnj ou grand mère :
+
+		this addAction ["Gestion BCC",DA3F_fnc_init_loadGui];
+
+
+		license utilisé : License_civ_BCC; (Pensez à la créer Oo (><) )

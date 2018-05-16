@@ -27,7 +27,7 @@
 		private _DA3F_Data 	= call compile format ["%1",ListeVehicule lbData _DA3F_index];
 			_DA3F_Data params[
 			    ["_DA3F_Veh","",[""]],
-				["_DA3F_plakList",0,[0]]
+				["_DA3F_plakList","",[""]]
 			];
 
 			if (_DA3F_plak isEqualTo 0) exitWith {};
@@ -42,7 +42,7 @@
 				private _DA3F_InfoVeh		= _DA3F_Vehicle getVariable ["dbinfo",[]];
 					_DA3F_InfoVeh params[
 					    ["_DA3F_uid","",[""]],
-						["_DA3F_Plak",0,[0]]
+						["_DA3F_Plak","",[""]]
 					];
 
 					if (_DA3F_plakList isEqualTo _DA3F_Plak) then {
@@ -56,3 +56,5 @@
 					};
 					if (_DA3F_Exit) exitWith {};
 			} forEach _DA3F_ListMyVeh;
+
+			[]call DA3F_fnc_UpdateListeVeh;

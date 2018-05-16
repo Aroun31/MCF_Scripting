@@ -38,13 +38,15 @@
 	*/
 
 		private _DA3F_ShowInfo		= "";
+		private _DA3F_CheckVeh		= "";
 		private _DA3F_InfoVehicle 	= [];
 		private _DA3F_Index 		= lbCurSel ListeVehicule;
 		private _DA3F_Data			= call compile format ["%1",ListeVehicule lbData _DA3F_Index];
 
 			_DA3F_Data params[
 			    ["_DA3F_ClassName","",[""]],
-				["_DA3F_Plak",0,[0]]
+				["_DA3F_Plak","",[""]],
+				["_DA3F_VehEntreprise",false,[false]]
 			];
 
 			/*
@@ -67,6 +69,11 @@
 			 	["_DA3F_FuelCapa",0,[0]]
 			 ];
 
+			 if (_DA3F_VehEntreprise) then [{
+			 			 	_DA3F_CheckVeh = "OUI";
+			 			 },{
+			 			 _DA3F_CheckVeh = "NON";
+			 		}];
 			 _DA3F_ShowInfo = _DA3F_ShowInfo + "<t color='#FEFEFE' size='0.8' align='left' >Véhicule :<t/>";
 			 _DA3F_ShowInfo = _DA3F_ShowInfo + "<t color='#00FF00' size='0.8' align='right' >%1<t/>";
 			 _DA3F_ShowInfo = _DA3F_ShowInfo + "<br/>";
@@ -88,13 +95,18 @@
 			 _DA3F_ShowInfo = _DA3F_ShowInfo + "<t color='#00FF00' size='0.8' align='right' >%6<t/>";
 			 _DA3F_ShowInfo = _DA3F_ShowInfo + "<br/>";
 
+			 _DA3F_ShowInfo = _DA3F_ShowInfo + "<t color='#FEFEFE' size='0.8' align='left' >Véhicule d'entreprise <t/>";
+			 _DA3F_ShowInfo = _DA3F_ShowInfo + "<t color='#00FF00' size='0.8' align='right' >%7<t/>";
+			 _DA3F_ShowInfo = _DA3F_ShowInfo + "<br/>";
+
 			Txt_Vehicule ctrlSetStructuredText parseText format [_DA3F_ShowInfo,
 			_DA3F_RealName,
 			_DA3F_Picture,
 			_DA3F_MaxCV,
 			_DA3F_MaxSpeed,
 			_DA3F_FuelCapa,
-			_DA3F_Passanger
+			_DA3F_Passanger,
+			_DA3F_CheckVeh
 			];
 
 			private _DA3F_AxeH 		= ctrlTextHeight Txt_Vehicule;
