@@ -35,11 +35,11 @@
             hint "Sélectionnez un client";
         };
 
-        private _DA3F_Compil		= {call compile format ["%1",param[0,[[""],[""]]]]};
-        private _DA3F_Data          = [ListeVehicule lbData (lbCurSel ListeVehicule)] call _DA3F_Compil;
-        private _DA3F_ClientEssai   = [ListeClient lbData (lbCurSel ListeClient)] call _DA3F_Compil;
+        private _DA3F_Data          = DA3F_Compil(ListeVehicule lbData (lbCurSel ListeVehicule));
+        private _DA3F_ClientEssai   = DA3F_Compil(ListeClient lbData (lbCurSel ListeClient));
         private _DA3F_TimeEssai     = 0;
-        private _DA3F_Value         = call compile format ["%1", ((ctrltext EditTime)select [0,2])];
+        private _DA3F_ValueSTR      = (ctrltext EditTime)select [0,2];
+        private _DA3F_Value         = DA3F_Compil(_DA3F_ValueSTR);
         systemChat str _DA3F_Data;
 			_DA3F_Data params[
 			    ["_DA3F_ClassName","",[""]],
@@ -78,7 +78,6 @@
         hint format ["Le véhicule immatriculé :\n %1 \nest à l'essai pendant :\n%2min",(_DA3F_VehEssai getVariable ["dbinfo",[]])param[1,[[""],[""]]],_DA3F_Value];
 
             systemChat format ["Le véhicule immatriculé : '%1', est à l'essai pendant : %2min",(_DA3F_VehEssai getVariable ["dbinfo",[]])param[1,[[""],[""]]],_DA3F_Value];
-
 
                     [_DA3F_VehEssai,_DA3F_ClientEssai,_DA3F_Value]spawn DA3F_fnc_EssaiActif;
                     closeDialog 0;

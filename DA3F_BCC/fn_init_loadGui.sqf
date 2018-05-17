@@ -2,7 +2,7 @@
     /*
     *
     *       Project :
-    *               Pacifique life
+    *               Pacifique life - Cadeau à Alexis Ptibrack !! 13/05/18
     *
     *       Team   :
     *               Dev'Arma 3 France / http://devarma3france.fr/
@@ -47,3 +47,4 @@
                     call DA3F_fnc_UpdateListeVeh;
                     call DA3F_fnc_UpdateListeAction;
                     call DA3F_fnc_UpdateListeClient;
+                    call DA3F_fnc_UpdateListeClientEssai;

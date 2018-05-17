@@ -40,5 +40,6 @@
             class ValideEssai {};
             class showInfo {};
             class EssaiActif {};
+            class ValideAction {};
         };
     };

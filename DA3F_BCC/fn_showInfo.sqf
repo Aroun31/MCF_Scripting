@@ -41,7 +41,7 @@
 		private _DA3F_CheckVeh		= "";
 		private _DA3F_InfoVehicle 	= [];
 		private _DA3F_Index 		= lbCurSel ListeVehicule;
-		private _DA3F_Data			= call compile format ["%1",ListeVehicule lbData _DA3F_Index];
+		private _DA3F_Data			= DA3F_Compil(ListeVehicule lbData _DA3F_Index);
 
 			_DA3F_Data params[
 			    ["_DA3F_ClassName","",[""]],

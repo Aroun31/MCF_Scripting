@@ -25,3 +25,6 @@
 #define	Btn_ValideEssai	My_Ctrl(130518,2402)
 #define	Btn_ValideAction	My_Ctrl(130518,2403)
 #define	Btn_DeclareVeh	My_Ctrl(130518,2405) // Invisible sur le menu besoin en prévision
+
+#define	DA3F_Compil(Args)	([Args]call{call compile format ["%1",param[0,[[""],[""]]]]})
+    	

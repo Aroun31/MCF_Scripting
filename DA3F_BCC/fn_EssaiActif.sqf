@@ -35,7 +35,7 @@
                 {
                 uiSleep 1;
                 	_DA3F_Time = _DA3F_Time - 1;
-                	hintSilent format ["Temps restant\n %1", [_DA3F_Time,"MM:SS"]call bis_fnc_secondsToString];
+                	//hintSilent format ["Temps restant\n %1", [_DA3F_Time,"MM:SS"]call bis_fnc_secondsToString];
                		!(_DA3F_Veh getVariable ["DA3F_EssaiActif",false]) ||
                 	(_DA3F_Time <= 0 || !(alive _DA3F_Veh) || !(alive _DA3F_Client))
             	};

@@ -22,21 +22,23 @@
     *
     */
 
-
+    private _DA3F_GetListClientActif = DA3F_PC_BCC getVariable ["DA3F_Pc_Info",[]];
 
 	disableSerialization;
+
             lbClear ListeEssai;
-            if (str DA3F_Cient_En_Essai isEqualTo "[]") exitWith {
-                ListeEssai lbAdd format ["Aucun client en essai", nil];
-                ListeEssai lbSetData [_foreachindex,str objNull];
+            if (str _DA3F_GetListClientActif isEqualTo "[]") exitWith {
+                _index = ListeEssai lbAdd format ["Aucun client en essai", nil];
+                ListeEssai lbSetData [_index,str objNull];
             };
 
 			{
 				_x params[
-                    ["_DA3F_Client","",[""]],
-                    ["_DA3F_Plak_Essai",0,[0]]
+                    ["_DA3F_veh",objNull,[objNull]],
+                    ["_DA3F_Client",objNull,[objNull]],
+                    ["_DA3F_TimeInit",0,[0]]
                 ];
-				private _DA3F_distance 	= round(player distance _DA3F_Client);
-				ListeEssai lbAdd format ["Client à : %1m", _DA3F_distance];
+                _plak = (_DA3F_veh getVariable ["dbinfo",[]])param[1,[[""],[""]]];
+				ListeEssai lbAdd format ["%1 - %2 - %3min",(name _DA3F_Client), _plak,_DA3F_TimeInit];
 				ListeEssai lbSetData [_foreachindex,str(_x)];
-			} forEach DA3F_Cient_En_Essai;
+			} forEach _DA3F_GetListClientActif;
