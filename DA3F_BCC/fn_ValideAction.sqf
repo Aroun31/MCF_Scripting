@@ -40,8 +40,6 @@
 	    case (["rappel",_DA3F_Data]call bis_fnc_inString): {
 	    _DA3F_IndexClient = lbCurSel ListeEssai;
 
-	    	hint format["Action :\n %1\nEn cours de dev.",_DA3F_Data];
-
 	    	if (_DA3F_IndexClient isEqualTo -1) exitWith {
 	    		hint "Sélectionne un client à l'essai";
 	    	};
@@ -66,7 +64,6 @@
 	    	hint format["Action :\n %1\nEn cours de dev.",_DA3F_Data];
 	    _DA3F_IndexClient = lbCurSel ListeEssai;
 
-	    	hint format["Action :\n %1\nEn cours de dev.",_DA3F_Data];
 
 	    	if (_DA3F_IndexClient isEqualTo -1) exitWith {
 	    		hint "Sélectionne un client à l'essai";

@@ -24,6 +24,10 @@
 
     disableSerialization;
 
+        if (isNil "License_civ_BCC") exitWith {
+            hint format ["%1 est inexistante ou mal déclaré \nMerci de d'indiquer au staff un problème de License", "License_civ_BCC"];
+        };
+
         if !(License_civ_BCC) exitWith {hint "Tu ne peux pas te servir de cette interaction"};
         if !(createDialog "DA3F_BCC_Gui") exitWith {};
 

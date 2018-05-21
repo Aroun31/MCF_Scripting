@@ -228,7 +228,7 @@
 		};
 		class DA3F_list_BoxLocActiv: DA3F_RscListBox
 		{
-			OnLbSelChanged = "_this call DA3F_fnc_";
+			OnLbSelChanged = "_this call DA3F_fnc_showInfoClientEssai";
 
 			idc = 1501;
 			x = 0.6575 * safezoneW + safezoneX;
@@ -315,7 +315,7 @@
 		};
 		class DA3F_ValidAction: DA3F_Btn
 		{
-			OnButtonClick = "_this call DA3F_fnc_ValideAction";
+			OnButtonClick = "_this call	DA3F_fnc_ValideAction";
 
 			idc = 2403;
 			text = "Valider l'action"; //--- ToDo: Localize;

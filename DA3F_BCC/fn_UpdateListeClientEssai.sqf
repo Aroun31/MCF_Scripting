@@ -38,7 +38,6 @@
                     ["_DA3F_Client",objNull,[objNull]],
                     ["_DA3F_TimeInit",0,[0]]
                 ];
-                _plak = (_DA3F_veh getVariable ["dbinfo",[]])param[1,[[""],[""]]];
-				ListeEssai lbAdd format ["%1 - %2 - %3min",(name _DA3F_Client), _plak,_DA3F_TimeInit];
+				ListeEssai lbAdd format ["%1",(name _DA3F_Client)];
 				ListeEssai lbSetData [_foreachindex,str(_x)];
 			} forEach _DA3F_GetListClientActif;

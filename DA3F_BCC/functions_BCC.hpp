@@ -41,5 +41,7 @@
             class showInfo {};
             class EssaiActif {};
             class ValideAction {};
+            class showInfoClientEssai {};
+            class GetFormatPlak {};
         };
     };

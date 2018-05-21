@@ -13,7 +13,7 @@ Et dans ce cas Aroun PAS CONTENT :D !
 
 	mettre dans le desciption.ext :
 		
-		#include "client\DA3F_BCC\DA3F_Gui_BCC.hpp"
+		#include "client\DA3F_BCC\DA3F_IncludeGui.hpp"
 
 
 	dans CfgFunctions du description.ext :
