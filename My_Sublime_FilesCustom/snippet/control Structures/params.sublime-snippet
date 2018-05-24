@@ -1,0 +1,9 @@
+<snippet>
+	<description>params[/*DA3F parametres*/]</description>
+    <content><![CDATA[params[
+    ["_DA3F_","",[""]],
+	["_DA3F_",0,[0]]
+];]]></content>
+    <tabTrigger>params</tabTrigger>
+    <scope>source.sqf</scope>
+</snippet>

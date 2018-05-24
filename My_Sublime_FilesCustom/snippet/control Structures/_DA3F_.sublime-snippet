@@ -1,0 +1,6 @@
+<snippet>
+	<description>private _DA3F_;</description>
+    <content><![CDATA[private _DA3F_]]></content>
+    <tabTrigger>_DA3F</tabTrigger>
+    <scope>source.sqf</scope>
+</snippet>

@@ -1,0 +1,6 @@
+<snippet>
+	<description>[/*DA3F Value | SCALAR*/]call DA3F_fnc_numberText;</description>
+    <content><![CDATA[[/*DA3F Value | SCALAR*/]call DA3F_fnc_numberText;]]></content>
+    <tabTrigger>DA3F_fnc_numberText</tabTrigger>
+    <scope>source.sqf</scope>
+</snippet>

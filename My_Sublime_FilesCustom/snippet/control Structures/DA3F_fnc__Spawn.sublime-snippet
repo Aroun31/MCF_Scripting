@@ -1,0 +1,6 @@
+<snippet>
+	<description>[/*Spawn DA3F Arguments*/]spawn DA3F_fnc_/*Name fnc*/;</description>
+    <content><![CDATA[[]spawn DA3F_fnc_;]]></content>
+    <tabTrigger>DA3F_fnc_</tabTrigger>
+    <scope>source.sqf</scope>
+</snippet>

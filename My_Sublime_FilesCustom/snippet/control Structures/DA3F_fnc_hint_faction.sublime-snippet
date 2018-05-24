@@ -1,0 +1,6 @@
+<snippet>
+	<description>[1,format["%1",nil]]call DA3F_fnc_hint_faction;</description>
+    <content><![CDATA[[1,format["%1",nil]]call DA3F_hint_faction;]]></content>
+    <tabTrigger>DA3F_fnc_hint_faction</tabTrigger>
+    <scope>source.sqf</scope>
+</snippet>

@@ -1,0 +1,7 @@
+<snippet>
+	<description>[/*DA3F ARGUMENT*/] remoteExec [/*DA3F Function*/,/*DA3F Target*/]</description>
+    <content><![CDATA[[/*DA3F ARGUMENT*/] remoteExec [/*DA3F Function*/,/*DA3F Target*/];
+]]></content>
+    <tabTrigger>remoteExec</tabTrigger>
+    <scope>source.sqf</scope>
+</snippet>

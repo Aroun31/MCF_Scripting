@@ -1,0 +1,107 @@
+[
+	{
+		"keys": ["ctrl+g"],
+		"command": "show_overlay",
+		"args": {"overlay": "command_palette", "text": "Snippet: "}
+	},
+	{
+		"keys": ["alt+e"],
+		"command": "search_doc",
+		"args": {"url": "https://community.bistudio.com/wiki?title=Special:Search&search=%s&go=Go"}
+	},
+	{
+		"keys": ["f1"],
+		"command": "search_doc",
+		"args": {"url": "https://community.bistudio.com/wiki?title=Special:Search&search=%s&go=Go"}
+	},
+	{
+		"keys": ["alt+f1"],
+		"command": "open_url",
+		"args": {"url": "http://www.code-couleur.com/"}
+	},
+	{
+		"keys": ["alt+f2"],
+		"command": "open_url",
+		"args": {"url": "https://github.com/Aroun31"}
+	},
+	{
+		"keys": ["alt+f"],
+		"command": "search_doc",
+		"args": {"url": "http://arma2-wiki.fr/wiki/index.php?search=%s&go=Lire&title=Spécial:Recherche"}
+	},
+	{
+		"keys": ["ctrl+alt+enter"],
+		"command": "open_url"
+	},
+	{
+		"keys": ["alt+d"],
+		"command": "go_to_file"
+	},
+	{
+		"keys": ["f5"],
+		"command": "run_fsm"
+	},
+	{
+		"keys": ["ctrl+f5"],
+		"command": "open_cmd"
+	},
+	{
+		"keys": ["f6"],
+		"command": "run_texview"
+	},
+	{
+		"keys": ["f7"],
+		"command": "arma3communitytools", "args": {"type": "arma3tools"}
+	},
+	{
+		"keys": ["ctrl+f7"],
+		"command": "arma3communitytools", "args": {"type": "mikero"}
+	},
+	{
+		"keys": ["shift+f7"],
+		"command": "arma3communitytools", "args": {"type": "install"}
+	},
+	{
+		"keys": ["ctrl+alt+s"],
+		"command": "save_all"
+	},
+	{
+		"keys": ["f8"],
+		"command": "run_external"
+	},
+	{
+		"keys": ["ctrl+e","ctrl+p"],
+		"command": "privatize_var"
+	},
+	{
+		"keys": ["ctrl+e","ctrl+tab"],
+		"command": "unexpand_tabs",
+		"args": {"set_translate_tabs": true}
+	},
+	{
+		"keys": ["ctrl+e","ctrl+space"],
+		"command": "expand_tabs",
+		"args": {"set_translate_tabs": true}
+	},
+	{
+		"keys": ["ctrl+e","ctrl+i"],
+		"command": "indent_file"
+	},
+	{
+		"keys": ["ctrl+alt+e","ctrl+alt+i"],
+		"command": "reindent"
+	},
+	{
+		"keys": ["ctrl+shift+c"],
+		"command": "clone_file"
+	},
+	{
+		"keys": ["shift+alt+p"],
+		"command": "print_to_html",
+		"args": { "target": "browser" }
+	},
+	{
+		"keys": ["shift+alt+b"],
+		"command": "hotbackup"
+	}
+]

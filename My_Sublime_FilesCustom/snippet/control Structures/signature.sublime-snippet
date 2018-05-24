@@ -1,0 +1,27 @@
+<snippet>
+	<description>signature script</description>
+	<content><![CDATA[	/*
+    *
+    *       Project :  
+    *              ? Projet Alice / °Opérations° / Community FR / Farming-Party ?
+    *
+    *       Team   :
+    *               Dev'Arma 3 France / http://devarma3france.fr/
+    *
+    *       Author  :
+    *               [DA3F] Aroun Le BriCodeur
+    *
+    *       File :
+    *           ${1:${TM_FILENAME/\..+$/.sqf/}}
+    *
+    *       DESCRIPTION :
+    *               -------------
+    *       ARGUMENTS :
+    *               -------------
+    *       EXEMPLES :
+    *               -------------
+    *
+	*/]]></content>
+	<tabTrigger>Aroun</tabTrigger>
+	<scope>source.sqf, source.ext, source.c,source.hpp,source.cpp,source.c++pp, source.c,source.hpp,source.cpp,source.c++</scope>
+</snippet>

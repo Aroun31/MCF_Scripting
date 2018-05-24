@@ -1,0 +1,12 @@
+<snippet>
+	<description>Brutalzic Signature</description>
+    <content><![CDATA[
+/*
+    File: Name.sqf
+    Author: Brutalzic
+    http://www.btrteam.fr  / http://devarma3france.fr // http://UnRealLife.fr
+    BTR Team / MCF Gaming / DA3F / UnRealLife
+*/]]></content>
+    <tabTrigger>Brutalzic</tabTrigger>
+    <scope>source.sqf, source.ext, source.c,source.hpp,source.cpp,source.c++pp, source.c,source.hpp,source.cpp,source.c++</scope>
+</snippet>
