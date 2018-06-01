@@ -1,0 +1,86 @@
+//////////////////////////////////////
+// Fichier n°1 Define (PreProcess) 
+//////////////////////////////////////
+    #define Cfg_AP_Virus(TYPE,ClassH,Class,SETTING) TYPE(ConfigFile >> "Cfg_virus" >> ClassH >> Class >> SETTING)
+    #define MyEffect(Args)  ([Args]call{ private _GetEffect = param[0, [[""], [""]] ];\
+            if (_GetEffect isEqualTo "") exitWith {};\
+            private _DA3F_TypeEffect    = Cfg_AP_Virus(getText,"infectEffect",_GetEffect,"TypeEffect");\
+            private _DA3F_priority      = Cfg_AP_Virus(getNumber,"infectEffect",_GetEffect,"priority");\
+            private _DA3F_ColorEffect   = Cfg_AP_Virus(getArray,"infectEffect",_GetEffect,"ColorEffect");\
+            private _DA3F_TimeEffect    = Cfg_AP_Virus(getNumber,"infectEffect",_GetEffect,"TimeDelay");\
+            private _DA3F_TimeKill      = Cfg_AP_Virus(getNumber,"infectEffect",_GetEffect,"TimeKill");\
+            private _DA3F_Effect        = ppEffectCreate [_DA3F_TypeEffect,_DA3F_priority];\
+            _DA3F_Effect ppEffectEnable true;\
+            _DA3F_Effect ppEffectAdjust _DA3F_ColorEffect;\
+            _DA3F_Effect ppEffectCommit _DA3F_TimeEffect;\
+            [_DA3F_TimeKill, _DA3F_Effect,_DA3F_TypeEffect] spawn{\
+            	private _DA3F_NewEffect 	= []; \
+                _this params["_time", "_effect", "_DA3F_TypeEffect"];\
+                _DA3F_NewEffect = switch (toLower(_DA3F_TypeEffect)) do {\
+		            case "radialblur": {[0.01, 0.01, 0.06, 0.06]};\
+		            case "chromaberration": {[0.005, 0.005, false]};\
+		            case "wetdistortion": {[ 1, 1, 1, 4.10, 3.70, 2.50, 1.85, 0.0054, 0.0041, 0.0090, 0.0070, 0.5, 0.3, 10.0, 6.0]};\
+		            case "colorcorrections": {[1,	1, 	0, 	[0, 0, 0, 0], [1, 1, 1, 1], [0.299, 0.587, 0.114, 0], [-1, -1, 0, 0, 0, 0, 0]]};\
+		            case "dynamicblur": {[0]};\
+		            case "filmgrain": {[0.005,	1.25, 2.01, 0.75, 1.0, 0]};\
+		            case "colorinversion": {[0, 0, 0]};\
+		        };\
+                sleep _time;\
+                _effect ppEffectAdjust _DA3F_NewEffect;\
+                _effect ppEffectCommit 3;\
+                sleep 3.2;\
+                ppEffectDestroy _effect;\
+                _effect ppEffectEnable false;\
+            };\
+            true;\
+        })
+
+//////////////////////////////////////
+// Fichier n°2 Config :
+//////////////////////////////////////
+
+#define TRUE	1
+#define FALSE	0
+
+class Cfg_virus
+{
+	class infectEffect
+	{
+		class Effect_01
+		{
+			TypeEffect		= "filmGrain";
+			priority		= 2012;
+			ColorEffect[] 	= {1, 0.8, 0.6, 0.1, 1}; 
+			TimeDelay		= 3;
+			TimeKill		= 3;
+		};
+
+		class Effect_02
+		{
+			/*Arguments effects*/
+		};
+	};
+
+/*
+	Create infection
+*/
+	class DA3F_AP_INFECTIONS
+	{
+		class Virus_01
+		{
+			displayName	= "Arounomitoze";
+			effect[]	= {"Effect_01"}; // désactiver si {} | disable if {}
+			/* 
+			Autre settings  
+			 bla= 666; 
+			*/
+		};
+	};
+};        
+
+//////////////////////////////////////
+// Exemple dans un fichier :
+//////////////////////////////////////
+
+private _DA3F_Effect    = selectRandom(Cfg_AP_Virus(getArray,"DA3F_AP_INFECTIONS",_DA3F_Virus,"effect"));
+MyEffect(_DA3F_Effect);
