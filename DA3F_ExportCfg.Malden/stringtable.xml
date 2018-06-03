@@ -1,0 +1,61 @@
+<!-- &lt; = < -->
+<!-- &gt; = > -->
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="Exporter Config By [DA3F] Aroun Le Bricodeur">
+	<Package name="Exporter Config">
+		<Container name="Translate">
+			<Key ID="STR_DA3F_Author">
+				<Original>[DA3F] Aroun Le Bricodeur</Original>
+				<French>[DA3F] Aroun Le Bricodeur</French>
+			</Key>
+			<Key ID="STR_DA3F_Team">
+				<Original>Dev'Arma 3 France</Original>
+				<French>Dev'Arma 3 France</French>
+			</Key>
+			<Key ID="STR_DA3F_Mission">
+				<Original>Exporter of Config</Original>
+				<French>Exportateur de Config</French>
+			</Key>
+			<Key ID="STR_DA3F_OpenGUI">
+				<Original>Open the menu</Original>
+				<French>Ouvrir le menu</French>
+			</Key>
+			<Key ID="STR_DA3F_TargetTxtGUI">
+				<Original>In front of you :</Original>
+				<French>Face à toi :</French>
+			</Key>
+			<Key ID="STR_DA3F_Wait">
+				<Original>Thanks depatienter</Original>
+				<French>Merci de patienter</French>
+			</Key>
+			<Key ID="STR_DA3F_ObjectExport">
+				<Original>Exported object</Original>
+				<French>Objet exporte</French>
+			</Key>
+			<Key ID="STR_DA3F_UserProfil">
+				<Original>Profile used</Original>
+				<French>Profil utilise</French>
+			</Key>
+			<Key ID="STR_DA3F_EndExport">
+				<Original>End of the export</Original>
+				<French>Fin de l'export</French>
+			</Key>
+			<Key ID="STR_DA3F_Report">
+				<Original>Report</Original>
+				<French>Rapport</French>
+			</Key>
+			<Key ID="STR_DA3F_OnMap">
+				<Original>On the map :</Original>
+				<French>Sur la carte :</French>
+			</Key>
+			<Key ID="STR_DA3F_ExportTarget">
+				<Original>Export the object in front of me</Original>
+				<French>Exporter l'objet face à moi</French>
+			</Key>
+			<Key ID="STR_DA3F_MissionHTML">
+				<Original>&lt;t size='.85' align = 'center' color='#D2D601'&gt;Tools&lt;/t&gt;&lt;br/&gt;&lt;t size='1' align = 'center' color='#01A4D6'&gt;Exporter of Config&lt;/t&gt;</Original>
+				<French>&lt;t size='.85' align = 'center' color='#D2D601'&gt;Tools&lt;/t&gt;&lt;br/&gt;&lt;t size='1' align = 'center' color='#01A4D6'&gt;Exportateur de Config&lt;/t&gt;</French>
+			</Key>
+		</Container>
+	</Package>
+</Project>

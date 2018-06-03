@@ -1,0 +1,12 @@
+Author = $STR_DA3F_Author;
+Dev = $STR_DA3F_Author; // (n'est pas visible) inscript en mission.sqm
+onLoadName = $STR_DA3F_Mission;
+loadScreen = "";
+onLoadMission = $STR_DA3F_MissionHTML;
+
+#include "DA3F_DefineCtrl_GUI.hpp"
+#include "DA3F_GuiExporter.hpp"
+
+class CfgFunctions {
+	#include "ExporterFunctions.hpp"
+};
