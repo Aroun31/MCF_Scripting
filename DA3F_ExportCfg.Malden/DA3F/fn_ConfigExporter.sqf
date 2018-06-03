@@ -94,7 +94,7 @@
 					"-----------------------------------------------------------"call _DA3F_addLine;
 					(format["! %1 !",localize "STR_DA3F_EndExport"])call _DA3F_addLine;
 					(format["%1 : ",localize "STR_DA3F_Report"])call _DA3F_addLine;
-					(format["Config Export  : class ""%1""",_DA3F_Entry_Cfg]) call _DA3F_addLine;
+					(format["Cfg Parent Export  : class ""%1""",_DA3F_Entry_Cfg]) call _DA3F_addLine;
 					(format["%1 : %2",localize "STR_DA3F_ObjectExport",_DA3F_nameReal])call _DA3F_addLine;
 					(format["%1 : %2",localize "STR_DA3F_UserProfil",profileName]) call _DA3F_addLine;
 					(format["%1 %2",localize "STR_DA3F_OnMap",worldName]) call _DA3F_addLine;
