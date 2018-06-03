@@ -59,9 +59,10 @@
 				{
 					_DA3F_nameReal = ([_DA3F_obj,["displayName"]]call DA3F_fnc_searchInfo)select 0;
 
-					(format["Config Export  : class ""%1""",_DA3F_Entry_Cfg]) call _DA3F_addLine;
-					"- START -" call _DA3F_addLine;
+
 					"-----------------------------------------------------------------" call _DA3F_addLine;
+
+					"- START  EXPORT -" call _DA3F_addLine;
 					"" call _DA3F_addLine;
 
 						systemChat "DA3F Exporter sys. status : En cours..";
@@ -93,13 +94,14 @@
 					"-----------------------------------------------------------"call _DA3F_addLine;
 					(format["! %1 !",localize "STR_DA3F_EndExport"])call _DA3F_addLine;
 					(format["%1 : ",localize "STR_DA3F_Report"])call _DA3F_addLine;
+					(format["Config Export  : class ""%1""",_DA3F_Entry_Cfg]) call _DA3F_addLine;
 					(format["%1 : %2",localize "STR_DA3F_ObjectExport",_DA3F_nameReal])call _DA3F_addLine;
 					(format["%1 : %2",localize "STR_DA3F_UserProfil",profileName]) call _DA3F_addLine;
 					(format["%1 %2",localize "STR_DA3F_OnMap",worldName]) call _DA3F_addLine;
 					(format["Time Export : %1 sec",[(_DA3F_TimeEnd - _DA3F_TimeStart),"SS.MS"]call bis_fnc_secondsToString]) call _DA3F_addLine;
 					"-----------------------------------------------------------"call _DA3F_addLine;
 					""call _DA3F_addLine;
-					"By 'Le BriCodeur' [Dev'Arma3 France]" call _DA3F_addLine;
+					(format["%1 By 'Le BriCodeur' [Dev'Arma3 France]",localize "STR_DA3F_Mission"]) call _DA3F_addLine;
 
 				copyToClipboard _DA3F_TxtExport;
 
