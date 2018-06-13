@@ -1,0 +1,46 @@
+
+Variable d'environnement et leurs Descriptions
+
+%APPDATA%		Retourne un chemin d'accès au répertoire par défaut contenant les programmes utilisateur.
+
+%CMDCMDLINE%	Retourne la commande exacte utilisée pour accéder à l'interprêteur de commandes (cmd.exe).
+
+%COMPUTERNAME%	Retourne le nom attribué à l'ordinateur.
+
+%DATE%			Retourne la date actuelle.
+
+%ERRORLEVEL%	Contient le code d'erreur de la dernière commande utilisée.
+
+%HOMEDRIVE%		Contient la lettre de lecteur sur laquelle le répertoire de l'utilisateur courant est situé.
+
+%HOMEPATH%		Contient le chemin d'accès complet au répertoire de l'utilisateur courant.
+
+%NUMBER_OF_PROCESSOR%	Contient le nombre de processeurs présents sur le système.
+
+%OS%			Contient une chaîne de caractères décrivant le système d'exploitation installé. Noter que Windows 2000 se déclare comme étant WINDOWS_NT.
+
+%PATH%			Spécifie le chemin d'accès vers les principaux exécutables du système.
+
+%PATHEXT%		Décrit les extensions que le système considère comme exécutables.
+
+%PROCESSOR_ARCHITECTURE%	Décrit l'architecture du processeur (x86 pour les machines Intel, IA64 pour les architectures RISC).
+
+%RANDOM%		Retourne un entier compris entre 0 et 32167 choisi aléatoirement par le système.
+
+%SYSTEMDRIVE%	Contient la lettre de lecteur sur laquelle le système est situé (généralement C:).
+
+%SYSTEMROOT%	Contient le chemin d'accès au répertoire racine du système.
+
+%TEMP%			Contient le chemin d'accès du répertoire temporaire pour les applications.
+
+%TMP%			Contient le chemin d'accès du répertoire temporaire pour les applications.
+
+%TIME%			Retourne l'heure actuelle.
+
+%USERDOMAIN%	Contient le domain auquel appartient le compte courant.
+
+%USERNAME%		Contient le nom d'utilisateur correspondant au compte courant.
+
+%USERPROFILE%	Contient l'emplacement du profil utilisateur du compte courant.
+
+%WINDIR%		Contient le chemin d'accès au répertoire du système (généralement C:\WINDOWS ou C:\WINNT).
