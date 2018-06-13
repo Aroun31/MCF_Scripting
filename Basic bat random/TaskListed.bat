@@ -1,10 +1,10 @@
 @echo off
 echo //////////////////////////////
 echo ----------------------------
-echo   -Bat by Aroun for Jack-
+echo - Bat by Aroun for My Friends -
 echo ----------------------------
 echo //////////////////////////////
-echo salut Jack
+echo salut %username%
 echo affichage de la liste de tes processus
 echo Selectionne le PID de la tache qu'il te faut kill et tu fais :
 echo taskkill PID 
