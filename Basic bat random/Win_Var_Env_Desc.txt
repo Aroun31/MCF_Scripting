@@ -1,5 +1,5 @@
 
-Variable d'environnement et leurs Descriptions
+Variable d'environnement Windows et leurs Descriptions
 
 %APPDATA%		Retourne un chemin d'accès au répertoire par défaut contenant les programmes utilisateur.
 
