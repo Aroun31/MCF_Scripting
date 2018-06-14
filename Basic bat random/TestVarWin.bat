@@ -22,5 +22,7 @@ echo  " set DA3F=""Aroun Le BG"" "
 set DA3F="Aroun Le BG"
 echo et voilà tu as créé une variable reconnu pendant la session active ;)
 echo -
+echo Consulte le script si tu lis ce message en console afin de voir l'utilisation de la variable 
+echo -
 echo %DA3F% te souhaite une bonne journee / soirée ;)
 pause
