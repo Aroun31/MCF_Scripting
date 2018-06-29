@@ -1,0 +1,29 @@
+/*
+    By Aroun Le BriCodeur
+    Action pour ajouter/retirer les bouchons d'oreilles
+    pour obtenir l'action sur l'ensemble des joueurs.
+    Exécutez en 'global' dans la console,
+    le code suivant ce commentaire.
+
+    Le code suivant peut-être exécuté en init.sqf pour une installation sur une mission
+
+*/
+
+    []spawn
+    {
+                DA3F_AddActSound = {
+                    private _DA3F_unit = param[0];
+                    _DA3F_MyAction = _DA3F_unit addAction ["<t color='#00FF00' size='1.2'>Mettre les bouchons<t/>",{
+                    player removeAction (player getVariable ["My_Act", 0]);
+                     1 fadeSound 0.1;
+                        _DA3F_MyAction = player addAction ["<t color='#FF0000' size='1.2'>Retirer les bouchons<t/>",{
+                        player removeAction (player getVariable ["My_Act", 0]);
+                            1 fadeSound 1;
+                        [player]call DA3F_AddActSound;
+                    },"",999,false,false,"",""];
+                player setVariable ["My_Act", _DA3F_MyAction, FALSE];
+                },"",999,false,false,"",""];
+            _DA3F_unit setVariable ["My_Act", _DA3F_MyAction, FALSE];
+        };
+        [player]call DA3F_AddActSound;
+    };
