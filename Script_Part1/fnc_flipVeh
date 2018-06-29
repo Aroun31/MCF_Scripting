@@ -1,0 +1,28 @@
+/*
+
+    Flip vehicule
+    méthode n°1 : action molette.
+    méthode n°2 : exec local en console face aux véhicules.
+*/
+//méthode 1 commencez la sélection après cette ligne
+
+_DA3F_MyActionFlip = player addAction ["Flip vehicule",{
+    _veh = cursorObject;
+    if (_veh isEqualTo "man") exitWith {};
+    _pos = _veh modelToWorld [0,0,0.1];
+    _veh setPos _pos;
+},"",-999,false,false,"","!isNull cursorObject && player distance cursorObject < 8 && cursorObject isKindOf 'LandVehicle'"];
+player setVariable ["My_Act_Flip", _DA3F_MyActionFlip, FALSE];
+
+// fin de sélection pour la méthode 1
+
+/////////////////////////////////////////////////
+
+//méthode 2 commencez la sélection après cette ligne
+
+    _veh = cursorObject;
+    if (_veh isEqualTo "man") exitWith {};
+    _pos = _veh modelToWorld [0,0,0.1];
+    _veh setPos _pos;
+
+// fin de sélection pour la méthode 2
