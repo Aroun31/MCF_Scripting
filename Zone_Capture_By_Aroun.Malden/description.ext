@@ -1,0 +1,13 @@
+author = "[DA3F] Aroun Le BriCodeur (MCF GaminG)";
+Dev = "[DA3F] Aroun Le BriCodeur (MCF GaminG)"; // (n'est pas visible) inscript en mission.sqm
+onLoadName = "DA3F - Capture Party";
+loadScreen = "";
+onLoadMission = "<t size='.85' align = 'center' color='#D2D601'>Mission</t><br/><t size='1' align = 'center' color='#01A4D6'>Capture</t><br/><t size='1' align = 'center' color='#01A4D6'>développé par [DA3F]Aroun Le BriCodeur</t>";
+
+
+    #include "CfgRemoteExec.hpp"
+
+class CfgFunctions {
+    #include "DA3F_functionsMaster.hpp"
+};
+
