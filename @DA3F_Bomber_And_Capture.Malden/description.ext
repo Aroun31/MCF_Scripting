@@ -1,0 +1,35 @@
+author = "Aroun Le BriCodeur";
+Dev = "Aroun Le BriCodeur";
+onLoadName = "Live Dev Chill";
+loadScreen = "";
+onLoadMission = "<t size='.85' align = 'center' color='#D2D601'>Mission blabla</t><br/><t size='1' align = 'center' color='#01A4D6'>Short description</t>";
+joinUnassigned = 1;
+respawn = BASE;
+respawndelay = 0;
+disabledAI = 1;
+disableChannels[]={{0,false,false},{1,false,false},{2,false,false},{6,false,false}};
+enableDebugConsole = 1;
+respawnDialog = 1;
+ReviveMode = 1;                         //0: disabled, 1: enabled, 2: controlled by player attributes
+ReviveUnconsciousStateMode = 1;         //0: basic, 1: advanced, 2: realistic
+ReviveRequiredTrait = 0;                //0: none, 1: medic trait is required
+ReviveRequiredItems = 0;                //0: none, 1: medkit, 2: medkit or first aid kit
+ReviveRequiredItemsFakConsumed = 0;     //0: first aid kit is not consumed upon revive, 1: first aid kit is consumed
+ReviveMedicSpeedMultiplier = 2;         //speed multiplier for revive performed by medic
+ReviveForceRespawnDelay = 0;
+ReviveBleedOutDelay = 300;
+class Header
+{
+	gameType = Coop;
+	minPlayers = 1;
+	maxPlayers = 10;
+};
+
+#include "RemoteExec.hpp"
+#include "Dialogs\includeMaster.hpp"
+#include "ConfigMission\Cfg_DA3F_Mission.hpp"
+
+class CfgFunctions
+{
+	#include "functions_MC.cpp"
+};
