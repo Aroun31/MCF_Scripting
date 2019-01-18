@@ -7,6 +7,8 @@
 	Do it		:	14/01/2019 02:12:00
 */
 
+player enableStamina false; // No stamina
+
 DA3F_CaptureBlufor_On = false;
 DA3F_CaptureOpfor_On = false;
 DA3F_DifuseBlufor_On = false;
@@ -18,50 +20,11 @@ DA3F_NoSpam = false;
 DA3F_CaptureAreaActive = false;
 
 player setVariable ["DA3F_MyStuff", [], false];
-
 	[]spawn
 	{
 	    waitUntil {!(isNull (findDisplay 46))};
 	    (findDisplay 46) displayAddEventHandler ["KeyDown", "_this call DA3F_fnc_KeyHandler"];
 	};
-
-    // Eject vehicle
-    player addEventHandler ["GetInMan",{_this spawn DA3F_fnc_ejectVehicle;}];
-
-    //respawn
-    player addEventHandler ["respawn",{
-    _this spawn {
-    private _timeRestrict = MyConfigMission(getNumber,"intiBomber","TimeRestrict");
-	    params ["_unit", "_corpse"];
-	    _unit setpos getMarkerPos "DA3F_RestrictArea";
-	    deleteVehicle _corpse;
-	    hint format["Vous voilà immobilisé pendant %1sec", _timeRestrict];
-	    sleep _timeRestrict;
-	    if (DA3F_StartPartie) then {
-	    	switch (playerSide) do {
-	    	    case west: {
-	    	    if (DA3F_CaptureAreaActive) then [{
-	    				_unit setpos getMarkerPos "respawn_west_1";
-	    	    	},{
-	    				_unit setpos getMarkerPos "respawn_west";
-	    	    }];
-	    	    };
-
-	    	    case east: {
-		    	    if (DA3F_CaptureAreaActive) then [{
-		    				_unit setpos getMarkerPos "respawn_east_1";
-		    	    	},{
-		    				_unit setpos getMarkerPos "respawn_east";
-		    	    }];
-	    	    };
-
-	    	    default {
-	    	     	/* STATEMENT */
-	    	    };
-	    	};
-	    };
-    };
-}];
 
 
 // Wait new game
@@ -69,7 +32,7 @@ player setVariable ["DA3F_MyStuff", [], false];
 	while {true} do {
 		if (!DA3F_StartPartie && !DA3F_CaptureAreaActive) then {
 		    waitUntil {
-			    sleep 3;
+			    sleep 2;
 			    [{cutText["<t color='#D95412' size='1.2' align='center' >!! Veuillez patienter aucune manche active !!<br/><br/>Rendez vous sur votre drapeau pour vous équiper avant la manche.<br/><br/>Attendez qu'un chef d'équipe ou le Game Master lance une manche<t/>", "PLAIN DOWN", -1, true, true]}] remoteExecCall ["DA3F_fnc_VarAndCodeAllClient"];
 			    DA3F_StartPartie || DA3F_CaptureAreaActive;
 			};

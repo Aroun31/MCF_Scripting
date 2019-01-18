@@ -17,3 +17,42 @@ player addAction ["<t color='#00FF00' >Start Capture Area</t>",{
 
 	},[],0,true,true,"",""];
 */
+
+
+    // Eject vehicle
+    player addEventHandler ["GetInMan",{_this spawn DA3F_fnc_ejectVehicle;}];
+
+    //respawn
+    player addEventHandler ["respawn",{
+    _this spawn {
+	    params ["_unit", "_corpse"];
+    private _timeRestrict = MyConfigMission(getNumber,"intiBomber","TimeRestrict");
+	    _unit setpos getMarkerPos "DA3F_RestrictArea";
+
+	    hint format["Vous voilà immobilisé pendant %1sec", _timeRestrict];
+	    sleep _timeRestrict;
+	   // if (DA3F_StartPartie) then {
+	    	switch (playerSide) do {
+	    	    case west: {
+	    	    if (DA3F_CaptureAreaActive) then [{
+	    				_unit setpos getMarkerPos "respawn_west_1";
+	    	    	},{
+	    				_unit setpos getMarkerPos "respawn_west";
+	    	    }];
+    	    };
+
+	    	    case east: {
+		    	    if (DA3F_CaptureAreaActive) then [{
+		    				_unit setpos getMarkerPos "respawn_east_1";
+		    	    	},{
+		    				_unit setpos getMarkerPos "respawn_east";
+		    	    }];
+	    	    };
+	    	};
+
+    		player setUnitLoadout (player getVariable ["MyLoadout", []]);
+    		deleteVehicle _corpse;
+    		player enableStamina false;
+	   // };
+    };
+}];

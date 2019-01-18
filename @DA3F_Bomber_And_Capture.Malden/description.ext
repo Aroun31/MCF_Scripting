@@ -33,3 +33,32 @@ class CfgFunctions
 {
 	#include "functions_MC.cpp"
 };
+
+class CfgDebriefing {
+    class BackLobby {
+        title = "Retour Lobby";
+        subtitle = "Merci de ta visite";
+        description = "°Opérations.V2° - retour au lobby";
+        pictureBackground = "";
+        picture = "";
+        pictureColor[] = {0.8,0.25,0,1};
+    };
+
+    class Kicked {
+        title = "-{Kick}-";
+        subtitle = "Tu as été kické";
+        description = "Attention à ton comportement<br/>Evite d'aller jusqu'au ban, nous sommes ici pour passer du bon temps <br/>retour au lobby";
+        pictureBackground = "";
+        picture = "";
+        pictureColor[] = {0.8,0.25,0,1};
+    };
+
+    class Banned {
+        title = "-{BAN}-";
+        subtitle = "Tu as été bannis";
+        description = "Tu n'es plus le bienvenue sur : °Ops - Rp° <br/>Tu étais prévenu. <br/>retour au lobby";
+        pictureBackground = "";
+        picture = "";
+        pictureColor[] = {0.8,0.25,0,1};
+    };
+};

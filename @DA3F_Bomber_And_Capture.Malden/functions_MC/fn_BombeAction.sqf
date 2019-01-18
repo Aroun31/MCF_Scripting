@@ -16,6 +16,7 @@
 		(parseText format ["<t color='#F0F000' size='1.3' align='center' > !! Info !! <t/><br/><t color='#ABABAB' size='1' >Chargement d'une nouvelle manche<br/><br/>Veuillez attendre le start du Game Master<t/>"]) remoteExec ["hint"];
 	};
 
+
 	[{DA3F_BombeActive = true}] remoteExecCall ["DA3F_fnc_VarAndCodeAllClient"];
 	sleep 0.1; // wait the frame remote
 	switch (playerSide) do {
@@ -41,11 +42,12 @@
 		if (DA3F_BombeActive) then [{
 			parseText "<t color='#F31400' align='center' size='1.3' >!! BOOOMMMM !!<t/>"  remoteExec ["hintSilent"];
 				[]spawn {
+				private _DA3F_TypeAmmoBombe = ["ammo_Missile_AA_R73", "ammo_Penetrator_Rocket_03_AP"];
 				private _bombe = objNull;
 					for "_i" from 0 to 1 do {
 						switch (playerSide) do {
 						    case west: {
-								_bombe = "DemoCharge_Remote_Ammo" createVehicle [0,0,0];
+								_bombe = (selectRandom _DA3F_TypeAmmoBombe) createVehicle [0,0,0];
 								_bombe setpos getPos Terminal_opfor;
 								_bombe setDamage 1;
 
@@ -53,8 +55,9 @@
 									["west", 1, "GrpScore"] remoteExecCall ["DA3F_fnc_score", 2];
 								};
 						    };
+
 						    case east: {
-								_bombe = "DemoCharge_Remote_Ammo" createVehicle [0,0,0];
+								_bombe = (selectRandom _DA3F_TypeAmmoBombe) createVehicle [0,0,0];
 								_bombe setpos getPos Terminal_blufor;
 								_bombe setDamage 1;
 
@@ -80,4 +83,3 @@
 				};
 				[]call LOCAL_FNC_ReloadGame;
 		}];
-

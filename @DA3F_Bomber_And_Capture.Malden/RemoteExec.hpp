@@ -30,6 +30,8 @@
 			F(DA3F_fnc_VarAndCodeAllClient, ANYONE)
 			F(DA3F_fnc_score, ANYONE)
 			F(DA3F_fnc_CheckVictory, ANYONE)
+			F(DA3F_fnc_KickOrBan, CLIENT)
+			F(DA3F_fnc_BanClient, SERVER)
 
 		};
 

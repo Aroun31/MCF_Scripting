@@ -38,9 +38,9 @@
 
       case _WinKeysAction: {
             if (dialog) then [{
-                closeDialog 0
+              closeDialog 0
             },{
-                _handle = [] spawn DA3F_fnc_OpenRapideAction;
+              _handle = [] spawn DA3F_fnc_OpenRapideAction;
           }];
       };
 
@@ -97,16 +97,21 @@ _handle = []spawn {
    };
 
 
-/*
+
     // F3 for Admin mission
     case 61: {
         if (dialog) then [{
-          closeDialog 0;
+          _handled = [uiNamespace getVariable ["GM_GUI", displayNull], false]spawn DA3F_fnc_GuiGM_Dynamic;
         },{
-          []spawn DA3F_fnc_Admin_CreateDialog;
+          _handled = []spawn {
+          disableSerialization;
+          if !(isNull (uiNamespace getVariable ["GM_GUI", displayNull])) exitWith {};
+          private _DA3F_dialog = createDialog "DA3F_GM_gui";
+          if !(_DA3F_dialog) exitWith {};
+        };
       }];
     };
-*/
+
 /*
     case 38: {
         if(_alt && !_ctrlKey) then {

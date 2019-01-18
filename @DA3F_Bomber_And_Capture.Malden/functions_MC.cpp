@@ -17,13 +17,18 @@ class MainFncBy_DA3F
 		class realoadGame {};
 		class HeightText {};
 		class FlagStarterAction {};
+		class StartGameBombers {};
+		class EndGameBombers {};
+		class StartCaptureArea {};
+		class KickOrBan {};
 	};	
 
 	class ServerInit
 	{
 		file="server";
-		class CheckVictory		{};
-		class score		{};
+		class CheckVictory	{};
+		class score			{};
+		class BanClient		{};
 	};
 
 	class GUIsqf
@@ -32,6 +37,15 @@ class MainFncBy_DA3F
 		class onLoadLoadout		{};
 		class BtnValide		{};
 		class lbselChanged		{};
+		class OnloadGM		{};
+		class load_GamesMods	{};
+		class load_listPlayer	{};
+		class load_listActionGM	{};
+		class GuiGM_Dynamic	{};
+		class BtnGM_Valide	{};
+		class GetPlayerKickBan	{};
+		class BtnGM_ValidAction	{};
+		class TP_Unit	{};
 	};
 
 	class DA3F_AreaCapture

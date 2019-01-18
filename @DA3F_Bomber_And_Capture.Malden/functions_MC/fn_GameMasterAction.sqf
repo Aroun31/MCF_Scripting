@@ -6,7 +6,7 @@
 *    ==================================
 *    Description: * * * *
 *
-*/
+
 
 
 _this addAction ["<t color='#00FF00' >Start Game</t>",{
@@ -54,3 +54,4 @@ _this addAction ["<t color='#00FF00' >Start Capture Area</t>",{
 		[] remoteExec ["DA3F_fnc_CheckVictory", 2];
 
 	},[],0,true,true,"",""];
+*/

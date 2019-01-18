@@ -9,6 +9,7 @@
 */
 
 _this addAction ["<t color='#00FF00' >Start Game</t>",{
+
 	if (DA3F_StartPartie) exitWith {hint "Manche déjà active"};
 	[{hint "Start Game !"; DA3F_StartPartie = true}] remoteExecCall ["DA3F_fnc_VarAndCodeAllClient",0];
 		{

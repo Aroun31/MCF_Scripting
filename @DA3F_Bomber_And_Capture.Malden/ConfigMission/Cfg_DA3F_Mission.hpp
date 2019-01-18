@@ -13,8 +13,7 @@ class Cfg_MissionAroun
 		TimerBoom = 60; // Temps avant que la bombe n'explose
 		TimeDesamorce = 10; // Temps de désamorçage (prendre en compte le timer de la bombe)
 		TimeDeverrouillage = 10; // Temps avant le déverrouillage du terminal adverse (ce temps est randomisé par lui même. exemple : 7 + ramdom 7)
-		TimeRestrict = 60; // Temps de pénalité lorsqu'un joueur est mort
-
+		TimeRestrict = 5; // Temps de pénalité lorsqu'un joueur est mort
 	};
 
 		/* Area Capture */
@@ -27,6 +26,18 @@ class Cfg_MissionAroun
 		ListAntenne[] = {"DA3F_Antenne_01", "DA3F_Antenne_02", "DA3F_Antenne_03"}; // Liste des antennes (Nom de la variable)
 		listMrk[] = {"DA3F_Area_01", "DA3F_Area_02", "DA3F_Area_03"}; // Liste des nom de marker (Nom de la variable pas la zone texte)
 	};	
+
+	class GameMaster
+	{
+		GameMasterUID[]  = {"76561198083277485"};
+		listGameMods[] = {{"Start - DA3F Bombers", "DA3F_fnc_StartGameBombers"}, {"End - DA3F Bombers", "DA3F_fnc_EndGameBombers"}, {"Start - Capture Area", "DA3F_fnc_StartCaptureArea"}};
+		listActionGM[] = {{"TP player", "DA3F_fnc_TP_Unit"}, {"Kill player", "DA3F_fnc_KilledPlayer"}, {"heal player", "DA3F_fnc_HealPlayer"}};
+	};
+
+	class Admin
+	{
+		MdpServerCmd = "MDP_TempForTwitch"; // ServerCommand de votre server cfg (Kick et Ban via BE impossible sinon)
+	};
 
 	// class Loadout
 	#include "Mission_Loadout.hpp"
