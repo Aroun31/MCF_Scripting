@@ -16,7 +16,6 @@
 		private _DA3F_ClientID      = 0;
 		private _DA3F_Exit			= FALSE;
 		private _DA3F_ServerCmd		= MyConfigMission(getText,"Admin","MdpServerCmd");
-
 			if (_DA3F_TypeAction isEqualTo -1) exitWith {};
 				if (_DA3F_TypeAction in [0, 1]) then {
         			_DA3F_ClientID	= owner _DA3F_Unit;

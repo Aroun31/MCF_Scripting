@@ -18,7 +18,7 @@
 		hint "Désamorçage en cours !";
 	};
 
-	[{DesamorceActive = true}] remoteExecCall ["DA3F_fnc_VarAndCodeAllClient"];
+	[{DesamorceActive = true}] remoteExecCall ["DA3F_fnc_VarAndCodeAllClient", playableUnits];
 
 	waitUntil {
 	sleep 0.5;
@@ -27,5 +27,7 @@
 	};
 
 	10 cutText [format["Désamorçage succès"], "PLAIN DOWN"];
-	[{DesamorceActive = false}] remoteExecCall ["DA3F_fnc_VarAndCodeAllClient"];
-	[{DA3F_BombeActive = false}] remoteExecCall ["DA3F_fnc_VarAndCodeAllClient"];
+
+		sleep 2;
+
+			[]spawn DA3F_fnc_realoadGame;

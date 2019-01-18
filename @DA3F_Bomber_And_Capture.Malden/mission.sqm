@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={8151.2124,55.059029,10461.779};
-		dir[]={0,-0.70710677,0.70710683};
-		up[]={0,0.70710677,0.70710671};
-		aside[]={0.99999994,0,0};
+		pos[]={8023.4312,32.68417,10565.249};
+		dir[]={-0.3816666,-0.52338624,0.76183897};
+		up[]={-0.23443247,0.85209531,0.46794721};
+		aside[]={0.89407629,-2.7939677e-009,0.44791484};
 	};
 };
 binarizationWanted=0;
@@ -212,6 +212,25 @@ class Mission
 					{
 						class Attribute0
 						{
+							property="allowDamage";
+							expression="_this allowdamage _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
 							property="speaker";
 							expression="_this setspeaker _value;";
 							class Value
@@ -229,7 +248,7 @@ class Mission
 								};
 							};
 						};
-						class Attribute1
+						class Attribute2
 						{
 							property="pitch";
 							expression="_this setpitch _value;";
@@ -248,7 +267,26 @@ class Mission
 								};
 							};
 						};
-						nAttributes=2;
+						class Attribute3
+						{
+							property="enableStamina";
+							expression="_this enablestamina _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=4;
 					};
 				};
 			};
@@ -6922,7 +6960,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8082,36.021778,10356};
+				position[]={8081.625,36.010178,10349.5};
 				angles[]={0,0.97407335,0};
 			};
 			side="Empty";
@@ -6932,7 +6970,6 @@ class Mission
 			};
 			id=197;
 			type="Land_LampHalogen_F";
-			atlOffset=-1.9073486e-006;
 			class CustomAttributes
 			{
 				class Attribute0

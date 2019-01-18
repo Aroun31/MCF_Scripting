@@ -20,4 +20,4 @@
 	_DA3F_StrCompil = format ["[%1]spawn %2", _DA3F_Data, _DA3F_listAction];
 
 			[]call compile _DA3F_StrCompil;
-	[_DA3F_data]call DA3F_fnc_TP_Unit;
+	//[_DA3F_data]call DA3F_fnc_TP_Unit;

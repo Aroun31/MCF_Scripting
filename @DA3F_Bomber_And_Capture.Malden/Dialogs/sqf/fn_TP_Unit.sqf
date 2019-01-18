@@ -13,4 +13,6 @@
 	openMap [true, true];
     hint "Clique sur la map ou tu souhaites te TP";
     cutText["Clique sur la map ou tu souhaites te TP", "PLAIN"];
-	onMapSingleClick format["(vehicle %1) setPos _pos; openMap [false, false];cutText["""", ""PLAIN""];hintSilent """"; onMapSingleClick ''; true", _DA3F_Unit];
+	onMapSingleClick format["(vehicle %1) setPos _pos; openMap [false, false];hintSilent """"; onMapSingleClick ''; true", _DA3F_Unit];
+	sleep 10;
+	cutText["", "PLAIN"];

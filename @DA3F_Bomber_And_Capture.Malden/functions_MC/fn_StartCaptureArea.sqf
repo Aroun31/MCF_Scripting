@@ -8,7 +8,7 @@
 *
 */
 
-if (DA3F_StartPartie) exitWith {hint "Capture Area active"};
+if (DA3F_CaptureAreaActive) exitWith {hint "Capture Area active"};
 
 	[{hint "Start Capture Area !"; DA3F_CaptureAreaActive = true}] remoteExecCall ["DA3F_fnc_VarAndCodeAllClient"];
 

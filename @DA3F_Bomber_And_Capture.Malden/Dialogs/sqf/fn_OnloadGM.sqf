@@ -13,7 +13,7 @@
 	uiNamespace setVariable ["GM_GUI", _DA3F_Display];
 
 	private _DA3F_UidGM = MyConfigMission(getArray,"GameMaster","GameMasterUID");
-	if (!((getPlayerUID player) in _DA3F_UidGM) && !(playerSide isEqualTo independent)) exitWith
+	if !(getPlayerUID player in _DA3F_UidGM) exitWith
 	{
 		closeDialog 0;
 		hint "Action réservé au Game Master";
@@ -38,4 +38,3 @@
 	[_DA3F_listMods]call DA3F_fnc_load_GamesMods;
 	[_DA3F_listPlayer]call DA3F_fnc_load_listPlayer;
 	[_DA3F_listAction]call DA3F_fnc_load_listActionGM;
-

@@ -1,3 +1,4 @@
+#include "BomberMacros.hpp";
 /*
 	Generated	:	Apps Mission Creator by Aroun Le BriCodeur
 	Author		:	Aroun Le BriCodeur

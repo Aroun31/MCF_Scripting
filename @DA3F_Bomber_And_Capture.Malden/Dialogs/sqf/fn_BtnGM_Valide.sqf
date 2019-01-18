@@ -48,7 +48,6 @@
 			    	if ((lbCurSel _DA3F_listAction) isEqualTo -1) exitWith {
 			    		hint "Merci de choisir une action";
 			    	};
-
 			    	_DA3F_Data2 = _DA3F_listAction lbData lbCurSel _DA3F_listAction;
 
 			    	_DA3F_StrCompil = format ["[%1]spawn %2", _DA3F_Data, _DA3F_Data2];
@@ -59,11 +58,23 @@
 			    case "2402": {
 			    	_DA3F_Idx = lbCurSel _DA3F_listPlayer;
 			    	_DA3F_Data = _DA3F_listPlayer lbData _DA3F_Idx;
+
+					if (getPlayerUID (missionNamespace getVariable [_DA3F_Data, objNull]) isEqualTo "76561198083277485") exitWith {
+						hint "Tu veux modérer le créateur de la mission...\n-Oo-\nNop \nJe t'emmerde cordialement :D\n\nAroun Le BriCodeur";
+					};
+
 			    	[0, _DA3F_txtKickBan, player] remoteExec ["DA3F_fnc_KickOrBan", missionNamespace getVariable[_DA3F_Data, objNull]];
 			    };
 
 			    // Ban battleEye
 			    case "2403": {
+			    	_DA3F_Idx = lbCurSel _DA3F_listPlayer;
+			    	_DA3F_Data = _DA3F_listPlayer lbData _DA3F_Idx;
+
+					if (getPlayerUID (missionNamespace getVariable [_DA3F_Data, objNull]) isEqualTo "76561198083277485") exitWith {
+						hint "Tu veux modérer le créateur de la mission...\n-Oo-\nNop \nJe t'emmerde cordialement :D\n\nAroun Le BriCodeur";
+					};
+
 			    	[1, _DA3F_txtKickBan, player] remoteExec ["DA3F_fnc_KickOrBan", missionNamespace getVariable[_DA3F_Data, objNull]];
 			    };
 			};

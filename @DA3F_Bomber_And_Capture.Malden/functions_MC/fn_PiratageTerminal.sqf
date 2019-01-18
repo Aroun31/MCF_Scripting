@@ -33,7 +33,7 @@
         "_this distance _target < 5 && !(playerSide isEqualTo independent) && DA3F_StartPartie",
         "_caller distance _target < 10 && DA3F_StartPartie",
         {
-            (parseText format ["<t color='#FF0000' size='1.3' align='center' > !! ALERTE !! <t/><br/><t color='#ABABAB' size='1' >Une personne vient de s'introduire sur le réseau sécurisé !!<t/>"]) remoteExec ["hint"];
+            (parseText format ["<t color='#FF0000' size='1.3' align='center' > !! ALERTE !! <t/><br/><t color='#ABABAB' size='1' >Une personne vient de s'introduire sur le réseau sécurisé !!<t/>"]) remoteExecCall ["hint"];
             [_target,1] call BIS_fnc_dataTerminalAnimate;
         },
         {
@@ -43,12 +43,12 @@
         },
         {
 
-        (parseText format ["<t color='#F0F000' size='1.3' align='center' >Connexion établie avec succès<t/><br/><t color='#ABABAB' size='1' >Piratage du terminal de l'ennemi en cours...<t/>"]) remoteExec ["hint", playerSide];
+        (parseText format ["<t color='#F0F000' size='1.3' align='center' >Connexion établie avec succès<t/><br/><t color='#ABABAB' size='1' >Piratage du terminal de l'ennemi en cours...<t/>"]) remoteExecCall ["hint", playerSide];
 
             [_target,3] call BIS_fnc_dataTerminalAnimate;
 
             sleep (TimeDeverTerminal + (random TimeDeverTerminal));
-            (parseText format ["<t color='#F0F000' size='1.3' align='center' >Intrusion dans le système établie avec succès<t/><br/><t color='#ABABAB' size='1' >Le terminale ennemie est déverrouiller<t/>"]) remoteExec ["hint", playerSide];
+            (parseText format ["<t color='#F0F000' size='1.3' align='center' >Intrusion dans le système établie avec succès<t/><br/><t color='#ABABAB' size='1' >Le terminale ennemie est déverrouiller<t/>"]) remoteExecCall ["hint", playerSide];
 
             switch (playerSide) do {
                 case west: {
@@ -79,21 +79,20 @@
 
             switch (playerSide) do {
                 case west: {
-                    DA3F_OPFOR_CAPTURE_ACTIVE = false;
-                    publicVariable "DA3F_OPFOR_CAPTURE_ACTIVE";
                     [Terminal_opfor, 0] call BIS_fnc_dataTerminalAnimate;
-                    [{DA3F_CaptureBlufor_On = false}] remoteExecCall ["DA3F_fnc_VarAndCodeAllClient", west];
                 };
 
                 case east: {
-                    DA3F_BLUFOR_CAPTURE_ACTIVE = false;
-                    publicVariable "DA3F_BLUFOR_CAPTURE_ACTIVE";
                     [Terminal_blufor, 0] call BIS_fnc_dataTerminalAnimate;
-                    [{DA3F_CaptureOpfor_On = false}] remoteExecCall ["DA3F_fnc_VarAndCodeAllClient", east];
                 };
-
             };
 
+                DA3F_OPFOR_CAPTURE_ACTIVE = false;
+                DA3F_BLUFOR_CAPTURE_ACTIVE = false;
+                publicVariable "DA3F_OPFOR_CAPTURE_ACTIVE";
+                publicVariable "DA3F_BLUFOR_CAPTURE_ACTIVE";
+
+                [{DA3F_CaptureBlufor_On = false; DA3F_CaptureOpfor_On = false}] remoteExecCall ["DA3F_fnc_VarAndCodeAllClient", playableUnits];
                 [Terminal_opfor, 0] call BIS_fnc_dataTerminalAnimate;
                 [Terminal_blufor, 0] call BIS_fnc_dataTerminalAnimate;
                 [Terminal_center, 0] call BIS_fnc_dataTerminalAnimate;

@@ -46,6 +46,8 @@ class MainFncBy_DA3F
 		class GetPlayerKickBan	{};
 		class BtnGM_ValidAction	{};
 		class TP_Unit	{};
+		class KillUnits	{};
+		class HealUnits	{};
 	};
 
 	class DA3F_AreaCapture

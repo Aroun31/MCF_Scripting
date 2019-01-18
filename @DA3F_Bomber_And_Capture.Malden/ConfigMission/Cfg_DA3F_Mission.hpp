@@ -31,7 +31,7 @@ class Cfg_MissionAroun
 	{
 		GameMasterUID[]  = {"76561198083277485"};
 		listGameMods[] = {{"Start - DA3F Bombers", "DA3F_fnc_StartGameBombers"}, {"End - DA3F Bombers", "DA3F_fnc_EndGameBombers"}, {"Start - Capture Area", "DA3F_fnc_StartCaptureArea"}};
-		listActionGM[] = {{"TP player", "DA3F_fnc_TP_Unit"}, {"Kill player", "DA3F_fnc_KilledPlayer"}, {"heal player", "DA3F_fnc_HealPlayer"}};
+		listActionGM[] = {{"TP player", "DA3F_fnc_TP_Unit"}, {"Kill player", "DA3F_fnc_KillUnits"}, {"heal player", "DA3F_fnc_HealUnits"}};
 	};
 
 	class Admin
