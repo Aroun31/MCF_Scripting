@@ -14,7 +14,7 @@
         private _yPos       = 0;
         private _xPos       = 0;
         private _veh        = objNull;
-        private _Array      = ["B_MRAP_01_F", "I_MRAP_03_F"]; comment '["class1", "class2", etc... "class10"];';
+        private _Array      = ["B_MRAP_01_F", "I_MRAP_03_F"];
         private _quantite   = 50; comment 'nombre de véhicule spawn';
         private _classname  = "";
         private _Authors    = [];
@@ -79,7 +79,7 @@
         cutText [format["FIN de spawn véhicule\n\nStablisation...\n\nCalcule FPS après stabilisation, résultat dans 5sec", _FPS, round diag_fps, (round diag_fps) - _FPS],"PLAIN DOWN"];
         sleep (5 + random 0.3);
         cutText [format["FIN de calcule\n-----\nAuteurs des véhicules spawn :\n %4\n\nSTART: %1 FPS\n-----\nEND: %2 FPS\n-----\nPerte : %3 FPS\n-----\n\nScript de calcule FPS drop pour : DA3F - TEAM \nby Aroun", _FPS, round diag_fps, (round diag_fps) - _FPS, _Author],"PLAIN DOWN"];
-        comment "reste"
+        comment "reste";
         onEachFrame {};
         comment "show result";
         hintC format["FIN de calcule\n-----\nAuteurs des véhicules spawn :\n %4\n\nSTART: %1 FPS\n-----\nEND: %2 FPS\n-----\nPerte : %3 FPS\n-----\n\nScript de calcule FPS drop pour : DA3F - TEAM \nby Aroun Le BriCodeur", _FPS, round diag_fps, (round diag_fps) - _FPS, _Author];
