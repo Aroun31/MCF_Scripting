@@ -1,0 +1,113 @@
+-
+-
+-    File: TutoRestrictionGarage.txt
+-    ===============================
+-    Author: [DA3F] Aroun Le BriCodeur.
+-    ==================================
+-    Description:
+-		Ce tuto permet de mettre une restriction sur les garages,
+-		ayant pour effet de ne pas pouvoir sortir un véhicule rentré dans un autre garage.
+-
+-		pourquoi ?
+-
+-		pour éviter de rentrer un véhicule plein de farm, 
+-		et le resortir à l'autre bout de la map,
+-		non loin du traitement ou de la vente 
+-		sans avoir pris le risque de faire la route avec la cargaison.
+-
+-
+-			Donation :
+- 
+-				https://www.paypal.me/LeBriCodeur
+-					
+-					Un grand merci à tous pour vos dons, votre contribution même minime,
+-					m'est d'une grande aide.
+-														Aroun Le BriCodeur
+
+//////////////*Step 1*//////////////
+Pour commencer ajoute une colonne à ta table "vehicles" à l'aide de la commande SQL mis plus bas. tu peux l'exécuter en requête dans la partie SQL de ton moteur sql
+requête sql :
+ALTER TABLE vehicles
+ADD pos_garage varchar(128) NOT NULL DEFAULT '"[]"'
+
+//////////////*Step 2*//////////////
+ouvre le fichier : core\action\fn_storeVehicle.sqf
+tu vas créer une variable local sous : private ["_nearVehicles","_vehicle"];
+qui sera :
+private _DA3F_PosPnj = getPos (_this select 0);
+
+ensuite toujours dans le même fichier tu modifie les arguments passé dans le remoteExec :
+	[_vehicle,false,(_this select 1),_storetext] remoteExec ["TON_fnc_vehicleStore",RSERV];
+
+tu ajoute la variable que nous avons créé de cette façon :
+	[_vehicle,false,(_this select 1),_storetext, _DA3F_PosPnj] remoteExec ["TON_fnc_vehicleStore",RSERV];
+
+voilà pour le côté mission. occupons-nous du life server
+
+//////////////*Step 3*//////////////
+pour faire dans la continuité de ce que nous avons commencé,
+tu vas ouvrir le fichier :
+\life_server\Functions\Systems\fn_vehicleStore.sqf
+après l'initialisation de la variable :
+	_storetext
+tu vas créer la variable qui récupère la position du garage,
+ce qui va te donner :
+
+	_storetext = blalba bis_fnc_param;
+	private _PosGarage = param[4, [], [[]]];
+
+maintenant dans ce même fichier tu cherche :
+
+	// prepare
+	_trunk = [_trunk] call DB_fnc_mresArray;
+	_cargo = [_cargo] call DB_fnc_mresArray;
+
+et à la suite tu mets :
+	_PosGarage = [_PosGarage] call DB_fnc_mresArray;
+
+ce qui te donne :
+	// prepare
+	_trunk = [_trunk] call DB_fnc_mresArray;
+	_cargo = [_cargo] call DB_fnc_mresArray;
+	_PosGarage = [_PosGarage] call DB_fnc_mresArray;
+
+et maintenant on modifie la requête qui se trouve juste en dessous de ce que l'on vient d'ajouter.
+requête de base :
+	_query = format ["UPDATE vehicles SET active='0', inventory='%3', gear='%4', fuel='%5', damage='%6' WHERE pid='%1' AND plate='%2'", _uid, _plate, _trunk, _cargo, _fuel, _damage];
+requête modifié :
+	_query = format ["UPDATE vehicles SET active='0', inventory='%3', gear='%4', fuel='%5', damage='%6', pos_garage='%7' WHERE pid='%1' AND plate='%2'", _uid, _plate, _trunk, _cargo, _fuel, _damage, _PosGarage];
+
+ça a pour effet d'enregistré la position du garage dans la colonne que nous avons ajouté à notre table vehicles
+passons au dernier fichier.
+
+//////////////*Step 4*//////////////
+
+ouvre ton fichier :
+\life_server\Functions\Systems\fn_spawnVehicle.sqf
+
+nous allons modifier la requête suivante :
+	private _query = format ["SELECT id, side, classname, type, pid, alive, active, plate, color, inventory, gear, fuel, damage, blacklist FROM vehicles WHERE id='%1' AND pid='%2'",_vid,_pid];
+et ajouter la colonne dans les infos à récupérer de cette façon :
+	private _query = format ["SELECT id, side, classname, type, pid, alive, active, plate, color, inventory, gear, fuel, damage, blacklist, pos_garage FROM vehicles WHERE id='%1' AND pid='%2'",_vid,_pid];
+maintenant tu cherche ceci :
+	private "_nearVehicles";
+et au DESSUS tu ajoute ce bloc :
+
+/*
+    Verif garage position
+*/
+    private _posGarage = [(_vInfo select 14)] call DB_fnc_mresToArray;
+    _posGarage = call compile format ["%1", _posGarage];
+
+        if (str _posGarage isEqualTo "[]") then {
+            _posGarage = _sp;
+        };
+
+        if ((_sp distance _posGarage) > 150) exitWith {
+            serv_sv_use deleteAt _servIndex;
+			[1,"Sortie du véhicule impossible.\nVous pouvez sortir un véhicule uniquement du garage dans le quel il a été rentré."] remoteExecCall ["life_fnc_broadcast",_unit];
+        };
+
+//////////////*Step 5*//////////////
+Tu repack tes PBO mission et life server et tu envois !
+Bon jeu à tous ! ;)
