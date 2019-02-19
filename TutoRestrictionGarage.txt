@@ -106,6 +106,8 @@ et au DESSUS tu ajoute ce bloc :
         if ((_sp distance _posGarage) > 150) exitWith {
             serv_sv_use deleteAt _servIndex;
 			[1,"Sortie du véhicule impossible.\nVous pouvez sortir un véhicule uniquement du garage dans le quel il a été rentré."] remoteExecCall ["life_fnc_broadcast",_unit];
+// FIXE ARGENT
+	[_price,_unit_return] remoteExecCall ["life_fnc_garageRefund",_unit];
         };
 
 //////////////*Step 5*//////////////
