@@ -1,0 +1,6 @@
+#include "Cfg_Mission.hpp"
+#include "Cfg_vehicles_Mission.hpp"
+#include "Cfg_loadouts.hpp"
+#include "Cfg_Items.hpp"
+#include "Cfg_Area.hpp"
+#include "Cfg_Process.hpp"
