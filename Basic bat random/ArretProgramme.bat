@@ -2,7 +2,6 @@
 chcp 65001
 title Arrêt programmé du PC by Aroun Le BriCodeur
 color b
-:: 1heure = 3600 / 30min= 1800 / 5min=300 / 45min= 2700
 cls
 @echo off
 echo Hey ! Bienvenue sur le programme d'arrêt planifié de Aroun.
