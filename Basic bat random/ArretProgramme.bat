@@ -9,16 +9,12 @@ set /p TimeShut="indique une valeur en minute ( exemple : 1, 10, 60, etc... ) : 
 set "ShutSeconde=120"
 set /a timeConvert=%TimeShut%*60
 cls
-echo Tu peux maintenant partir tranquillement te coucher je m'occupe d'éteindre le PC.
+echo Tu peux maintenant partir tranquillement je m'occupe d'éteindre le PC.
 echo bonne journée ou bonne nuit ;) 
 echo -
 echo -
 echo -
+echo à bientôt sur le PC de %username%
 echo arrêt à la fin du compte à rebours :
-if %username% == mcfam (
-    echo à bientôt sur le PC de Aroun
-) else (
-    echo à bientôt sur le PC de %username%
-)
 TIMEOUT /T %timeConvert% /NOBREAK
 shutdown -s -t %ShutSeconde%
