@@ -1,0 +1,549 @@
+version=53;
+class EditorData
+{
+	moveGridStep=0.25;
+	angleGridStep=0.2617994;
+	scaleGridStep=1;
+	autoGroupingDist=10;
+	toggles=1;
+	class ItemIDProvider
+	{
+		nextID=18;
+	};
+	class MarkerIDProvider
+	{
+		nextID=2;
+	};
+	class Camera
+	{
+		pos[]={7931.9756,57.200001,9054.3818};
+		dir[]={0.28505364,-0.79525959,0.53508776};
+		up[]={0.37390652,0.60626888,0.70187712};
+		aside[]={0.88258249,-3.2410026e-007,-0.47017103};
+	};
+};
+binarizationWanted=0;
+addons[]=
+{
+	"A3_Structures_F_Mil_Flags",
+	"A3_Characters_F",
+	"A3_Structures_F_Exp_Walls_Wooden",
+	"A3_Ui_F",
+	"A3_Structures_F_Mil_Cargo"
+};
+class AddonsMetaData
+{
+	class List
+	{
+		items=4;
+		class Item0
+		{
+			className="A3_Structures_F_Mil";
+			name="Arma 3 - Military Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item1
+		{
+			className="A3_Characters_F";
+			name="Arma 3 Alpha - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item2
+		{
+			className="A3_Structures_F_Exp";
+			name="Arma 3 Apex - Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item3
+		{
+			className="A3_Ui_F";
+			name="Arma 3 - User Interface";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+	};
+};
+randomSeed=2602627;
+class ScenarioData
+{
+	author="[MCF] Aroun Le BriCodeur";
+	respawn=3;
+};
+class CustomAttributes
+{
+	class Category0
+	{
+		name="Multiplayer";
+		class Attribute0
+		{
+			property="RespawnTemplates";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"ARRAY"
+						};
+					};
+					class value
+					{
+						items=1;
+						class Item0
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="Counter";
+							};
+						};
+					};
+				};
+			};
+		};
+		nAttributes=1;
+	};
+};
+class Mission
+{
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.30000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.30000001;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2035;
+		month=6;
+		day=24;
+		hour=12;
+		minute=0;
+		startFogDecay=0.014;
+		forecastFogDecay=0.014;
+	};
+	class Entities
+	{
+		items=8;
+		class Item0
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6102.8481,124.29681,10772.985};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+				init="this addAction [""Arsenal"", { " \n "[ ""Open"", [ true ] ] call BIS_fnc_arsenal; " \n "}, """", 0, false, false, """", ""Obj_Serv getVariable [""""DA3F_NewStart"""", false]""];" \n "this addAction [""Builder menu"", ""createDialog """"DA3F_inGame"""" "", """", 0, false, false, """", ""Obj_Serv getVariable [""""DA3F_NewStart"""", false]""];";
+				name="Secteur_A";
+			};
+			id=0;
+			type="Flag_Green_F";
+		};
+		class Item1
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=5;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1250,4.1036472,11585.3};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						name="DA3F_unit_01";
+						isPlayer=1;
+					};
+					id=2;
+					type="B_Soldier_F";
+					atlOffset=3.3378601e-006;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male07ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.03;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1251.75,3.8824451,11585.3};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						name="DA3F_unit_02";
+						isPlayable=1;
+					};
+					id=5;
+					type="B_Soldier_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male07ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.03;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1253.5,3.7062488,11585.3};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						name="DA3F_unit_03";
+						isPlayable=1;
+					};
+					id=7;
+					type="B_Soldier_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male07ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.03;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item3
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1255.25,3.5480494,11585.3};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						name="DA3F_unit_04";
+						isPlayable=1;
+					};
+					id=9;
+					type="B_Soldier_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male07ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.03;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item4
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1257,3.3898501,11585.3};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						name="DA3F_unit_05";
+						isPlayable=1;
+					};
+					id=11;
+					type="B_Soldier_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male07ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.03;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1;
+			atlOffset=3.3378601e-006;
+		};
+		class Item2
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={19187.301,0.80413711,-5130.1592};
+				angles[]={0,6.1689706,0};
+			};
+			side="Empty";
+			flags=1;
+			class Attributes
+			{
+				name="Obj_Serv";
+			};
+			id=3;
+			type="Land_WoodenWall_01_m_4m_F";
+			atlOffset=72.860001;
+		};
+		class Item3
+		{
+			dataType="Marker";
+			position[]={1253.48,3.8970001,11588.382};
+			name="respawn_west";
+			type="Empty";
+			angle=359.63959;
+			id=12;
+			atlOffset=-6.6995621e-005;
+		};
+		class Item4
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1268.9587,15.229957,11593.483};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=14;
+			type="Land_Cargo_Tower_V3_F";
+			atlOffset=0.076177835;
+		};
+		class Item5
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7937.1108,36.176804,9071.1006};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+				init="this addAction [""Arsenal"", { " \n "[ ""Open"", [ true ] ] call BIS_fnc_arsenal; " \n "}, """", 0, false, false, """", ""Obj_Serv getVariable [""""DA3F_NewStart"""", false]""];" \n "this addAction [""Builder menu"", ""createDialog """"DA3F_inGame"""" "", """", 0, false, false, """", ""Obj_Serv getVariable [""""DA3F_NewStart"""", false]""];";
+				name="Secteur_B";
+			};
+			id=15;
+			type="Flag_Green_F";
+		};
+		class Item6
+		{
+			dataType="Marker";
+			position[]={7938.5317,32.494957,9079.9014};
+			name="marker_1";
+			text="Secteur B";
+			type="mil_triangle";
+			id=16;
+		};
+		class Item7
+		{
+			dataType="Marker";
+			position[]={6103.0547,120.32,10773.377};
+			name="marker_2";
+			text="Secteur A";
+			type="mil_triangle";
+			id=17;
+		};
+	};
+};

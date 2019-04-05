@@ -1,0 +1,14 @@
+Dev = "Aroun Le BriCodeur";
+Author = "Aroun Le BriCodeur";
+OnLoadName = "Defense-Builder";
+onLoadMission = "Defense-Builder";
+onLoadIntro = "Bienvenue sur la mission : Defense-Builder";
+briefingName = "Defense-Builder par Aroun Le BriCodeur";
+disabledAI = 1;
+#include "config\includeMasterCfg.hpp"
+#include "dialog\includeMastert.hpp"
+
+class CfgFunctions
+{
+	#include "FUNCTIONS.hpp"
+};
