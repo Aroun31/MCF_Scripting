@@ -37,6 +37,7 @@
 
 	{
 		_x allowDamage true;
+		[_x]spawn DA3F_fnc_noCampingBot;
 	} forEach (units _grp);
 
 	"GO GO GO !!!" remoteExecCall ["hint"];

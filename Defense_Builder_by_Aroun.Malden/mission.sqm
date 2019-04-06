@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={7931.9756,57.200001,9054.3818};
-		dir[]={0.28505364,-0.79525959,0.53508776};
-		up[]={0.37390652,0.60626888,0.70187712};
-		aside[]={0.88258249,-3.2410026e-007,-0.47017103};
+		pos[]={7937.897,38.568432,9061.1279};
+		dir[]={-0.78981757,-0.45237026,0.41427672};
+		up[]={-0.40061677,0.89182025,0.2101329};
+		aside[]={0.46452042,2.0541484e-007,0.88560706};
 	};
 };
 binarizationWanted=0;
@@ -150,7 +150,7 @@ class Mission
 			flags=5;
 			class Attributes
 			{
-				init="this addAction [""Arsenal"", { " \n "[ ""Open"", [ true ] ] call BIS_fnc_arsenal; " \n "}, """", 0, false, false, """", ""Obj_Serv getVariable [""""DA3F_NewStart"""", false]""];" \n "this addAction [""Builder menu"", ""createDialog """"DA3F_inGame"""" "", """", 0, false, false, """", ""Obj_Serv getVariable [""""DA3F_NewStart"""", false]""];";
+				init="this addAction [""Arsenal"", { " \n " [ ""Open"", [ true ] ] call BIS_fnc_arsenal; " \n "waitUntil {sleep 0.3; isNull (uiNamespace getVariable [""RscDisplayArsenal"", displayNull])}; " \n "hint ""Save automatique de votre équipement pour le respawn !""; " \n "Obj_Serv setVariable [format [""My_stuff_%1"", profileName], getUnitLoadout player, true]; " \n "}, """", 0, false, false, """", ""Obj_Serv getVariable [""""DA3F_NewStart"""", false]""];" \n "this addAction [""Builder menu"", ""createDialog """"DA3F_inGame"""" "", """", 0, false, false, """", ""Obj_Serv getVariable [""""DA3F_NewStart"""", false]""];";
 				name="Secteur_A";
 			};
 			id=0;
@@ -521,11 +521,12 @@ class Mission
 			flags=5;
 			class Attributes
 			{
-				init="this addAction [""Arsenal"", { " \n "[ ""Open"", [ true ] ] call BIS_fnc_arsenal; " \n "}, """", 0, false, false, """", ""Obj_Serv getVariable [""""DA3F_NewStart"""", false]""];" \n "this addAction [""Builder menu"", ""createDialog """"DA3F_inGame"""" "", """", 0, false, false, """", ""Obj_Serv getVariable [""""DA3F_NewStart"""", false]""];";
+				init="this addAction [""Arsenal"", { " \n " [ ""Open"", [ true ] ] call BIS_fnc_arsenal; " \n "waitUntil {sleep 0.3; isNull (uiNamespace getVariable [""RscDisplayArsenal"", displayNull])}; " \n "hint ""Save automatique de votre équipement pour le respawn !""; " \n "Obj_Serv setVariable [format [""My_stuff_%1"", profileName], getUnitLoadout player, true]; " \n "}, """", 0, false, false, """", ""Obj_Serv getVariable [""""DA3F_NewStart"""", false]""];" \n "this addAction [""Builder menu"", ""createDialog """"DA3F_inGame"""" "", """", 0, false, false, """", ""Obj_Serv getVariable [""""DA3F_NewStart"""", false]""];";
 				name="Secteur_B";
 			};
 			id=15;
 			type="Flag_Green_F";
+			atlOffset=-3.8146973e-006;
 		};
 		class Item6
 		{

@@ -23,7 +23,7 @@
 	_distanceMin = _distanceMin + random _distanceMin;
 	if (_distanceMin > _distanceMax) then {
 		while {_distanceMin > _distanceMax} do {
-		    _distanceMin = _distanceMin - 10
+		    _distanceMin = _distanceMin - 30
 		};
 	};
 

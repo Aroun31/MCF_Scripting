@@ -74,7 +74,6 @@ class DA3F_inGame
 
 	class controls
 	{
-
 		class DA3F_Valide_left : DA3F_Btn
 		{
 			idc = 2400;
@@ -84,6 +83,7 @@ class DA3F_inGame
 			w = 0.216562 * safezoneW;
 			h = 0.028 * safezoneH;
 			onButtonClick = "_this call DA3F_fnc_ValideBuyBuild";
+			show = false;
 		};
 		class DA3F_valide_right : DA3F_Btn
 		{
@@ -93,6 +93,7 @@ class DA3F_inGame
 			y = 0.7632 * safezoneH + safezoneY;
 			w = 0.216562 * safezoneW;
 			h = 0.028 * safezoneH;
+			onButtonClick = "_this call DA3F_fnc_ValideBuyBuild";
 		};
 		class DA3F_close : DA3F_Btn
 		{
@@ -124,6 +125,7 @@ class DA3F_inGame
 			y = 0.318 * safezoneH + safezoneY;
 			w = 0.216562 * safezoneW;
 			h = 0.378 * safezoneH;
+			Onlbselchanged = "_this call DA3F_fnc_lbselChangBuilder";
 		};
 		class DA3F_listRight : DA3F_RscListBox
 		{

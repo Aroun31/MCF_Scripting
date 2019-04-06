@@ -9,5 +9,7 @@ class MyClass
 		class spawnUnits {};
 		class onLoadMainMenu {};
 		class ValideBuyBuild {};
+		class noCampingBot {};
+		class moveObjectHome {};
 	};
 };

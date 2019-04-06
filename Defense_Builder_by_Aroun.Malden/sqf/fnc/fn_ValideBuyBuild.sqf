@@ -12,7 +12,7 @@
 	params["_ctrl"];
 
 	private _display = ctrlParent _ctrl;
-	private _listBox = _display displayCtrl 1500;
+	private _listBox = _display displayCtrl 1501;
 	private _idx = lbCurSel _listBox;
 	if (_idx isEqualTo -1) exitWith {
 		hint "Merci de faire un choix";
@@ -34,8 +34,10 @@
 
 	private _obj = _className createVehicle [0, 0, 0];
 	_obj attachTo [player, [0.4, 3, 0], "pelvis"];
-	player addAction ["Poser",{
-		private _obj = _this param[3];
-		detach _obj;
-		player removeAction (_this param[2]);
-	}, _obj]
+	[]spawn DA3F_fnc_moveObjectHome;
+	player setVariable ["DA3F_AttachObj", _obj, false];
+
+	private _idx = player addAction ["Menu de pose",{
+		[]spawn DA3F_fnc_moveObjectHome;
+	}];
+	player setVariable ["DA3F_myAction", _idx];
