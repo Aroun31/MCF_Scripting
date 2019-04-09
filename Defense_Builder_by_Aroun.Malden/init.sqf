@@ -21,13 +21,15 @@
 			_x doMove getPos (selectRandom playableUnits);
 		};
 	} forEach allUnits;
+
+data\BgHUD_player.paa
 */
 []spawn {
 waitUntil {time > 1};
 player enableStamina false;
 player enableFatigue false;
 player setVariable ["DA3F_VoteUnit", false];
-
+[]call DA3F_fnc_runHud;
 player addEventHandler ["respawn", {
 	_this spawn {
 		deleteVehicle (_this select 1);
@@ -35,6 +37,7 @@ player addEventHandler ["respawn", {
 		(_this select 0) enableFatigue false;
 		(_this select 0) allowDamage false;
 		(_this select 0) setpos markerPos "respawn_west";
+		[]call DA3F_fnc_runHud;
 		private _timeWait = cfgConfig(getNumber,"DB_init","TimePenalite");
 		hint format ["Pénalité de %1 sec", _timeWait];
 		sleep _timeWait;

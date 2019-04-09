@@ -30,3 +30,9 @@ class CfgFunctions
 {
 	#include "FUNCTIONS.hpp"
 };
+
+
+class RscTitles
+{
+	#include "dialog\DA3F_AllTitle.hpp"
+};

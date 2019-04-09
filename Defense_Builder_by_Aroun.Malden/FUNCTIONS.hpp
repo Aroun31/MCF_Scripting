@@ -12,5 +12,7 @@ class MyClass
 		class noCampingBot {};
 		class moveObjectHome {};
 		class scrollAction {};
+		class runHud {};
+		class updateHud {};
 	};
 };
