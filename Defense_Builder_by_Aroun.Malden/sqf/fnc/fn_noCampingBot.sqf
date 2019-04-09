@@ -8,7 +8,6 @@
 *    Description: * * * *
 *
 */
-
 params [["_unit", objNull, [objNull]]];
 
 	if (isNull _unit) exitWith {};
@@ -21,7 +20,7 @@ params [["_unit", objNull, [objNull]]];
 		private _wait = false;
 	while {alive _unit} do {
 		_unitPos = getPos _unit;
-		_loop = time + (_timeWait * 60);
+		_loop = time + _timeWait;//(_timeWait * 60);
 		_wait = false;
 		waitUntil {
 			sleep 0.3;
@@ -32,5 +31,10 @@ params [["_unit", objNull, [objNull]]];
 				};
 			_wait
 		};
-		_unit doMove _pos;
+
+		if ((random 100) < 50) then [{
+			_unit doMove _pos;
+			},{
+			_unit doMove getPos (selectRandom playableUnits);
+		}];
 	};

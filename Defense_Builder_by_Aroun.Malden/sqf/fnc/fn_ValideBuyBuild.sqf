@@ -22,7 +22,6 @@
 	private _price = _listBox lbValue _idx;
 
 	private _gain = player getVariable ["DA3F_MyScore", 0];
-	hint str [_gain, _price];
 	if (_gain < _price) exitWith {
 		hint "Tu ne dispose pas d'assez de points";
 	};

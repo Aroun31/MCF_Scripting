@@ -12,7 +12,11 @@
 	(format["Start Manche : \n%1", Obj_Serv getVariable ["DA3F_counterStart", 1]]) remoteExecCall ["hint", 0];
 
 	private _flag = cfgConfig(getText,"DB_init","StartCamps");
-	private _grp = [ (call DA3F_fnc_calculPos), EAST, ((Obj_Serv getVariable ["DA3F_counterStart", 1]) * 2)] call BIS_fnc_spawnGroup;
+	//private _nrbUnits = (((Obj_Serv getVariable ["DA3F_counterStart", 1]) * 2) * (count playableUnits));
+	private _nrbUnits = ((count playableUnits) * (Obj_Serv getVariable ["DA3F_counterStart", 1]));
+
+_spawnGrp = {
+	private _grp = [(call DA3F_fnc_calculPos), EAST, _this] call BIS_fnc_spawnGroup;
 	private _pos = format ["getpos %1", _flag];
 	private _arr = [];
 
@@ -58,6 +62,19 @@
 			_x doMove (getpos(selectRandom playableUnits));
 		} forEach (units _grp);
 	};
+/*
+		[_grp]spawn {
+			params["_grp"];
+			while {((count (units _grp)) > 0)} do {
+				sleep (120 + (random 60));
+				{
+					if !(isPlayer _x) then {
+						_x doMove getPos (selectRandom playableUnits);
+					};
+				} forEach (units _grp);
+			};
+		};
+*/
 
 	private _wait = false;
 	private _idx = -1;
@@ -76,6 +93,7 @@
 	private _arrValide = [];
 
 	"En attente des votes" remoteExecCall ["hint"];
+
 	waitUntil {
 		waitUntil {
 			sleep 0.3;
@@ -101,3 +119,5 @@
 	Obj_Serv setVariable ["DA3F_NewStart", false, true];
 	Obj_Serv setVariable ["DA3F_VotePlayers", [], true];
 	[]spawn DA3F_fnc_spawnUnits;
+};
+_nrbUnits call _spawnGrp;

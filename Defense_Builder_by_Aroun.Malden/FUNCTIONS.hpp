@@ -11,5 +11,6 @@ class MyClass
 		class ValideBuyBuild {};
 		class noCampingBot {};
 		class moveObjectHome {};
+		class scrollAction {};
 	};
 };
