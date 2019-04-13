@@ -1,0 +1,24 @@
+
+//-- init.sqf
+DA3F_noSpam = false;
+
+	DA3F_fnc_noSpam = {
+	private _spam = true;
+		if (DA3F_noSpam) exitWith {
+			hint "Tu ne peux pas faire cette action aussi vite";
+			_spam;
+		};
+		_spam = false;
+		DA3F_noSpam = true;
+		[]spawn{
+			private _wait = time + 0.5;
+			waitUntil {time >= _wait};
+		DA3F_noSpam = false;
+		};
+	_spam
+	};
+//-- end init.sqf
+
+//-- à mettre en haut des fichiers ou tu veux bloquer le spam
+	private _isSpam = []call DA3F_fnc_noSpam;
+	if (_isSpam) exitWith {};
