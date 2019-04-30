@@ -9,5 +9,5 @@
 *
 *		Je suis une fonction une une tâche précise
 */
-_unit = _this select 0;
+private _unit = _this select 0;
 (round((damage _unit)*100));
