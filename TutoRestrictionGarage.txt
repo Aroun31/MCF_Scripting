@@ -111,5 +111,48 @@ et au DESSUS tu ajoute ce bloc :
         };
 
 //////////////*Step 5*//////////////
+Edit 08.05.19.
+// Pour voir dans quel garage se trouve les véhicules
+life server :
+fn_getVehicles.sqf 
+modifiez la requête query par celle ci (ajout de la colonne créé dans la DB):
+_query = format ["SELECT id, side, classname, type, pid, alive, active, plate, color, pos_garage FROM vehicles WHERE pid='%1' AND alive='1' AND active='0' AND side='%2' AND type='%3'",_pid,_side,_type];
+//--------
+Côté mission : 
+fn_impoundMenu.sqf
+modifiez la ligne : 
+_tmp = [(_x select 2),  (_x select 8)];
+par :
+_tmp = [(_x select 2),  (_x select 8), (_x select 9)];
+pour finir allez dans le fichier :
+fn_garageLBChange.sqf
+En dessous de : 
+_classNameLife = _className;
+ajoutez :
+private _posCityVeh = (_dataArr select 2);
+_posCityVeh = call compile format ["%1",_posCityVeh];
+Maintenant cherchez cette ligne : 
+(CONTROL(2800,2803)) ctrlSetStructuredText parseText format [
+et au dessus ajoutez : 
+    private _vehInThisCity = nearestLocations [_posCityVeh, ["Name", "NameCity", "NameCityCapital", "NameLocal", "NameMarine", "NameVillage"], 300];
+    if (_vehInThisCity isEqualTo []) exitWith {};
+    private _city = _vehInThisCity param[0];
+    _city = text _city;
+Modifions les infos dans le menu en joutant la ville du garage ou est le véhicule.
+Cherchez toujours dans le même fichier : 
+    " +(localize "STR_Shop_Veh_UI_Fuel")+ " %7
+ajoutez en dessous : 
+    " +("Présent dans le garage de : ")+ " %9
+pour finir cherchez : 
+_vehicleColor
+mettez une virgule et ajoutez 
+_city
+sans virgule ce qui donne :
+
+_vehicleColor,
+_city
+];
+
+//---------------
 Tu repack tes PBO mission et life server et tu envois !
 Bon jeu à tous ! ;)
