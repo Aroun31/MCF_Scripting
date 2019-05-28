@@ -1,0 +1,10 @@
+C:\Users\mcfam\Desktop\Dev Apps\MCF - AppsReboot\MCF - AppsReboot\bin\Debug\MCF - AppsReboot.exe.config
+C:\Users\mcfam\Desktop\Dev Apps\MCF - AppsReboot\MCF - AppsReboot\bin\Debug\MCF - AppsReboot.exe
+C:\Users\mcfam\Desktop\Dev Apps\MCF - AppsReboot\MCF - AppsReboot\bin\Debug\MCF - AppsReboot.pdb
+C:\Users\mcfam\Desktop\Dev Apps\MCF - AppsReboot\MCF - AppsReboot\obj\Debug\MCF - AppsReboot.csprojAssemblyReference.cache
+C:\Users\mcfam\Desktop\Dev Apps\MCF - AppsReboot\MCF - AppsReboot\obj\Debug\MCF___AppsReboot.Form1.resources
+C:\Users\mcfam\Desktop\Dev Apps\MCF - AppsReboot\MCF - AppsReboot\obj\Debug\MCF___AppsReboot.Properties.Resources.resources
+C:\Users\mcfam\Desktop\Dev Apps\MCF - AppsReboot\MCF - AppsReboot\obj\Debug\MCF - AppsReboot.csproj.GenerateResource.cache
+C:\Users\mcfam\Desktop\Dev Apps\MCF - AppsReboot\MCF - AppsReboot\obj\Debug\MCF - AppsReboot.csproj.CoreCompileInputs.cache
+C:\Users\mcfam\Desktop\Dev Apps\MCF - AppsReboot\MCF - AppsReboot\obj\Debug\MCF - AppsReboot.exe
+C:\Users\mcfam\Desktop\Dev Apps\MCF - AppsReboot\MCF - AppsReboot\obj\Debug\MCF - AppsReboot.pdb
